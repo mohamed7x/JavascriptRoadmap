@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Comparison and Logical Operators</h1>
+
+<p>
+Comparison and Logical operators are used to test for true or false.
+</p>
+
+<h2>
+Comparison Operators
+</h2>
+<p>
+Comparison operators are used in logical statements to determine equality or difference between variables or values.
+<br><br>
+Given that x = 5, the table below explains the comparison operators:
+</p>
+
+<table>
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+    <th>Comparing</th>
+    <th>Returns</th>
+  </tr>
+  
+  <tr>
+    <td rowspan="3">==</td>
+    <td rowspan="3">equal to</td>
+    <td>x == 8</td>
+    <td>false</td>
+  </tr>
+  <tr>
+     <td>x == 5</td>
+    <td>true</td>
+  </tr>
+<tr>
+    <td>x == "5"</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td rowspan="2">===</td>
+    <td rowspan="2">equal value and equal type</td>
+    <td>x === 5</td>
+    <td>true</td>
+  </tr>
+  <tr>
+<td>x === "5"</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>!=</td>
+    <td>not equal</td>
+    <td>x != 8</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td rowspan="3">!==</td>
+    <td rowspan="3">not equal value or not equal type </td>
+    <td>x !== 5</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>x !== "5"</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>x !== 8</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td> > </td>
+    <td>greater than</td>
+    <td>x > 8	</td>
+    <td>false</td>
+  </tr>
+<tr>
+    <td> < </td>
+    <td>less than</td>
+    <td>x < 8	</td>
+    <td>true</td>
+  </tr>
+  
+<tr>
+    <td> >= </td>
+    <td>greater than or equal to</td>
+    <td>x <= 8	</td>
+    <td>false</td>
+  </tr>
+<tr>
+    <td> <= </td>
+    <td>less than or equal to</td>
+    <td>x <= 8	</td>
+    <td>true</td>
+  </tr>
+</table>
+
+ <h2>How Can it be Used</h2>
+  <p>Comparison operators can be used in conditional statements to compare values and take action depending on the result:
+  </p>
+  
+  <code>
+if (age < 18) text = "Too young to buy alcohol";
+  </code>
+  
+  <p>
+You will learn more about the use of conditional statements in the next chapter of this tutorial.
+  </p>
+
+ <h2>Logical Operators </h2>
+  <p>
+Logical operators are used to determine the logic between variables or values.<br>
+
+Given that x = 6 and y = 3, the table below explains the logical operators:
+  </p>
+
+<b>Operator:</b> &&<b>
+  <br>
+Description:</b> and 
+<br>
+<b>Example</b>
+<br>
+<p>(x < 10 && y > 1) is true</p>
+
+<div>
+<h2>The && Operator (Logical AND)</h2>
+<p>The && operator returns true if both expressions are true, otherwise it returns false.</p>
+
+<p id="demo"></p>
+<script>
+let x = 6;
+let y = 3;
+
+document.getElementById("demo").innerHTML =
+(x < 10 && y > 1) + "<br>" + 
+(x < 10 && y < 1);
+</script>
+</div>
+
+<b>Operator:</b> ||	<b>
+  <br>
+Description:</b> or 
+<br>
+<b>Example</b>
+<br>
+<p>(x == 5 || y == 5) is false</p>
+
+
+<div>
+<h2>The || Operator (Logical OR)</h2>
+<p>The || returns true if one or both expressions are true, otherwise it returns false.</p>
+
+<p id="demo1"></p>
+<script>
+let x1 = 6;
+let y1 = 3;
+
+document.getElementById("demo1").innerHTML = 
+(x1 == 5 || y1 == 5) + "<br>" + 
+(x1 == 6 || y1 == 0) + "<br>" + 
+(x1 == 0 || y1 == 3) + "<br>" + 
+(x1 == 6 || y1 == 3);
+</script>
+</div>
+
+<b>Operator:</b> !	<b>
+  <br>
+Description:</b> not 
+<br>
+<b>Example</b>
+<br>
+<p>	!(x == y) is true </p>
+
+<div>
+<h2>The ! Operator (Logical not)</h2>
+<p>The NOT operator (!) returns true for false statements and false for true statements.</p>
+
+<p id="demo2"></p>
+
+<script>
+let x2 = 6;
+let y2 = 3;
+
+document.getElementById("demo2").innerHTML = 
+!(x2 === y2) + "<br>" + 
+!(x2 > y2);
+
+</script>
+</div>
+
+<h2>Conditional (Ternary) Operator</h2>
+<p>JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.</p>
+
+<h3>Syntax</h3>
+<code>
+variablename = (condition) ? value1:value2
+</code>
+
+<h3>Example</h3>
+<code>
+let voteable = (age < 18) ? "Too young":"Old enough";
+</code>
+
+<p>If the variable age is a value below 18, the value of the variable voteable will be "Too young", otherwise the value of voteable will be "Old enough".</p>
+
+<h2>Comparing Different Types</h2>
+<p>Comparing data of different types may give unexpected results.<br><br>
+
+When comparing a string with a number, JavaScript will convert the string to a number when doing the comparison. An empty string converts to 0. A non-numeric string converts to NaN which is always false.</p>
+
+<table>
+  <tr>
+    <th>Case	</th>
+    <th>Value</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>2 < 12</td>
+    <td>true</td>
+    <td>
+      <p id="demot1"></p>
+       <script>
+document.getElementById("demot1").innerHTML = 2 < 12;
+       </script>
+    </td>
+  </tr>
+  <tr>
+    <td>2 < "12"</td>
+    <td>true</td>
+    <td>
+<p id="demot2"></p>
+<script>
+document.getElementById("demot2").innerHTML = 2 < "12";
+</script>
+    </td>
+  </tr>
+  <tr>
+    <td>2 < "John"</td>
+    <td>false</td>
+    <td>
+<p id="demot3"></p>
+<script>
+document.getElementById("demot3").innerHTML = 2 < "John";
+</script>
+    </td>
+  </tr>
+  <tr>
+    <td>2 > "John"</td>
+    <td>false</td>
+    <td>
+<p id="demot4"></p>
+<script>
+document.getElementById("demot4").innerHTML = 2 > "John";
+</script>
+    </td>
+  </tr>
+ <tr>
+    <td>2 == "John"</td>
+    <td>false</td>
+    <td>
+<p id="demot5"></p>
+<script>
+document.getElementById("demot5").innerHTML = 2 == "John";
+</script>
+    </td>
+  </tr>
+ <tr>
+    <td>"2" < "12"</td>
+    <td>false</td>
+    <td>
+<p id="demot6"></p>
+<script>
+document.getElementById("demot6").innerHTML = "2" < "12";
+</script>
+    </td>
+  </tr>
+ <tr>
+    <td>"2" > "12"</td>
+    <td>true</td>
+    <td>
+<p id="demot7"></p>
+<script>
+document.getElementById("demot7").innerHTML = "2" > "12";
+</script>
+    </td>
+  </tr>
+ <tr>
+    <td>"2" == "12"</td>
+    <td>false</td>
+    <td>
+<p id="demot8"></p>
+<script>
+document.getElementById("demot8").innerHTML = "2" == "12";
+</script>
+    </td>
+  </tr>
+</table>
+
+<p>When comparing two strings, "2" will be greater than "12", 
+because (alphabetically) 1 is less than 2.<br><br>
+
+To secure a proper result, variables should be converted to the proper type before comparison
+</p>
+
+<code>
+age = Number(age);
+if (isNaN(age)) {
+  voteable = "Input is not a number";
+} else {
+  voteable = (age < 18) ? "Too young" : "Old enough";
+}
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo3">can you vote?</p>
+
+<script>
+function myFunction() {
+  let voteable;
+  let age = Number(document.getElementById("age").value);
+if (isNaN(age)) {
+    voteable = "Input is not a number";
+  } else {
+    voteable = (age < 18) ? "Too young" : "Old enough";
+  }
+document.getElementById("demo3").innerHTML = voteable + " to vote";
+}
+</script>
+</div>
+
+<h2>The Nullish Coalescing Operator (??) </h2>
+<p>The ?? operator returns the first argument if it is null or undefined. Otherwise it returns the second.</p>
+
+<code>
+Example
+let name = null;
+let text = "missing";
+let result = name ?? text;
+</code>
+
+<h3>Output:</h3>
+<div>
+<h2>The ?? Operator</h2>
+<p>The ?? operator returns the first argument if it is null or undefined. Otherwise it returns the second.</p>
+
+<p id="demo4"></p>
+
+<script>
+let name = null;
+let text = "missing";
+let result = name ?? text;
+document.getElementById("demo4").innerHTML = "The name is " + result; 
+</script>
+</div>
+
+<p>
+The nullish operator is supported in all browsers since March 2020:
+</p>
+
+</body>
+</html>

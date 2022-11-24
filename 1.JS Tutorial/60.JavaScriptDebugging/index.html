@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Debugging</h1>
+<p>
+Errors can (will) happen, every time you write some new computer code.
+</p>
+
+<h2>Code Debugging</h2>
+<p>
+Programming code might contain syntax errors, or logical errors. <br><br>
+
+Many of these errors are difficult to diagnose.<br><br>
+
+Often, when programming code contains errors, nothing will happen. There are no error messages, and you will get no indications where to search for errors.<br><br>
+
+Searching for (and fixing) errors in programming code is called code debugging.
+</p>
+
+<h2>JavaScript Debuggers</h2>
+<p>
+Debugging is not easy. But fortunately, all modern browsers have a built-in JavaScript debugger.<br><br>
+
+Built-in debuggers can be turned on and off, forcing errors to be reported to the user.
+<br><br>
+With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.<br><br>
+
+Normally (otherwise follow the steps at the bottom of this page), you activate debugging in your browser with the F12 key, and select "Console" in the debugger menu.
+</p>
+
+<h2>The console.log() Method</h2>
+<p>
+If your browser supports debugging, you can use console.log() to display JavaScript values in the debugger window:
+</p>
+
+<h3>Example</h3>
+
+<pre>
+< !DOCTYPE html>
+< html>
+< body>
+
+< h1>My First Web Page</h1>
+
+< script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+< /script>
+
+< /body>
+< /html>
+</pre>
+
+<h3>Output:</h3>
+<div>
+<h2>My First Web Page</h2>
+
+<p>Activate debugging in your browser (Chrome, IE, Firefox) with F12, and select "Console" in the debugger menu.</p>
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+</div>
+
+<p>
+Tip: Read more about the console.log() method in our JavaScript Console Reference.
+</p>
+
+<h2>Setting Breakpoints</h2>
+<p>
+In the debugger window, you can set breakpoints in the JavaScript code.<br><br>
+
+At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.<br><br>
+
+After examining values, you can resume the execution of code (typically with a play button).
+</p>
+
+<h2>
+The debugger Keyword
+</h2>
+<p>
+The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.<br><br>
+
+This has the same function as setting a breakpoint in the debugger.<br><br>
+
+If no debugging is available, the debugger statement has no effect.<br><br>
+
+With the debugger turned on, this code will stop executing before it executes the third line.
+</p>
+
+<h3>Example</h3>
+<pre>
+let x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+</pre>
+<<h3>Output:</h3>
+<div>
+<p id="demo"></p>
+
+<p>With the debugger turned on, the code below should stop executing before it executes the third line.</p>
+
+<script>
+let x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+</script>
+</div>
+
+<h2>Major Browsers' Debugging Tools</h2>
+
+<p>
+Normally, you activate debugging in your browser with F12, and select "Console" in the debugger menu.<br><br>
+
+Otherwise follow these steps
+</p>
+
+<h3>Chrome</h3>
+<p>
+
+  <ul>
+    <li>Open the browser.</li>
+    <li>From the menu, select "More tools".
+    </li>
+    <li>From tools, choose "Developer tools".</li>
+    <li>Finally, select Console.</li>
+  </ul>
+</p>
+
+<h3>Firefox</h3>
+<p>
+  <ul>
+    <li>Open the browser.</li>
+    <li>From the menu, select "Web Developer".</li>
+    <li>Finally, select "Web Console".</li>
+  </ul>
+</p>
+
+<h3>Edge</h3>
+<p>
+  <ul>
+    <li>Open the browser.</li>
+    <li>From the menu, select "Developer Tools".</li>
+    <li>Finally, select "Console".</li>
+  </ul>
+</p>
+
+<h3>Opera</h3>
+<p>
+  <ul>
+    <li>Open the browser.</li>
+    <li>From the menu, select "Developer".
+    </li>
+    <li>From "Developer", select "Developer tools".</li>
+    <li>Finally, select "Console".</li>
+  </ul>
+</p>
+
+<h2>Did You Know?</h2>
+<p>
+Debugging is the process of testing, finding, and reducing bugs (errors) in computer programs.<br><br>
+The first known computer bug was a real bug (an insect) stuck in the electronics.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Object Properties</h1>
+
+<p>
+Properties are the most important part of any JavaScript object.
+</p>
+<h2>JavaScript Properties</h2>
+<p>
+Properties are the values associated with a JavaScript object.<br>
+
+A JavaScript object is a collection of unordered properties.<br>
+
+Properties can usually be changed, added, and deleted, but some are read only.
+</p>
+<h2>Accessing JavaScript Properties</h2>
+<p>
+The syntax for accessing the property of an object is:
+</p>
+<pre>
+objectName.property     
+// person.age
+</pre>
+<p>or</p>
+<pre>
+objectName["property"]   
+// person["age"]
+</pre>
+<p>or</p>
+<pre>
+objectName[expression]  
+// x = "age"; person[x]
+</pre>
+
+<p style="background-color: #ffffcc;">
+The expression must evaluate to a property name.
+</p>
+
+<h3>Example 1</h3>
+<pre>
+person.firstname + " is " +
+person.age + " years old.";
+</pre>
+
+<h3>Example 2</h3>
+<pre>
+person["firstname"] + " is " +
+person["age"] + " years old.";
+</pre>
+<h3>Output</h3>
+<div>
+<p>Access a property with .property:</p>
+
+<p id="demo1"></p>
+  
+<p>Access a property with ["property"]:</p>
+
+<p id="demo2"></p>
+
+<script>
+const person = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+
+document.getElementById("demo1").innerHTML = person.firstname + " is " + person.age + " years old.";
+
+document.getElementById("demo2").innerHTML = person["firstname"] + " is " + person["age"] + " years old.";
+</script>
+</div>
+
+<h2>JavaScript for...in Loop</h2>
+<p>
+The JavaScript <span style="color: red;">for...in</span> statement loops through the properties of an object.
+</p>
+
+<h3>Syntax</h3>
+<pre>
+for (let variable in object) {
+  // code to be executed
+}
+</pre>
+<p>
+The block of code inside of the <span style="color: red;">for...in</span> loop will be executed once for each property.<br>
+
+Looping through the properties of an object:
+</p>
+
+<h3>Example</h3>
+<pre>
+const person = {
+  fname:" John",
+  lname:" Doe",
+  age: 25
+};
+
+for (let x in person) {
+  txt += person[x];
+}
+</pre>
+<h3>Output</h3>
+<div>
+<p>Looping object property values:</p>
+
+<p id="demo3"></p>
+
+<script>
+{
+const person = {
+  fname:"John",
+lname:"Doe",
+  age:25
+}; 
+
+let txt = "";
+for (let x in person) {
+txt += person[x] + " ";
+}
+
+document.getElementById("demo3").innerHTML = txt;
+}
+</script>
+</div>
+
+<h2>Adding New Properties</h2>
+<p>
+You can add new properties to an existing object by simply giving it a value.<br>
+
+Assume that the person object already exists - you can then give it new properties:
+</p>
+<h3>Example</h3>
+<pre>
+person.nationality = "English";
+</pre>
+<h3>Output</h3>
+<div>
+<p>Add a new property to an existing object:</p>
+
+<p id="demo"></p>
+
+<script>
+{
+const person = {
+  firstname: "John",
+  lastname: "Doe",
+  age: 50,
+  eyecolor: "blue"
+};
+person.nationality = "English";
+document.getElementById("demo").innerHTML =
+person.firstname + " is " + person.nationality + ".";
+}
+</script>
+</div>
+
+
+<h2>Deleting Properties</h2>
+<p>The delete keyword deletes a property from an object:</p>
+
+<h3>Example</h3>
+<pre>
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+delete person.age;
+</pre>
+<p>or delete person["age"];</p>
+<h3>Example</h3>
+<pre>
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+delete person["age"];
+</pre>
+<h3>Output</h3>
+<div>
+<p>Deleting object properties.</p>
+
+<p id="demo4"></p>
+
+<script>
+{
+const person = {
+  firstname: "John",
+  lastname: "Doe",
+age: 50,
+  eyecolor: "blue"
+};
+delete person.lastname;
+delete person["age"];
+document.getElementById("demo4").innerHTML =
+person.firstname + " " +
+person.lastname +
+" is " 
++ person.age + " years old.";
+}
+</script>
+</div>
+<p>
+The <span style="color: red;">delete</span> keyword deletes both the value of the property and the property itself.<br>
+
+After deletion, the property cannot be used before it is added back again.<br>
+
+The <span style="color: red;">delete</span> operator is designed to be used on object properties. It has no effect on variables or functions.<br>
+
+The <span style="color: red;">delete</span> operator should not be used on predefined JavaScript object properties. It can crash your application.
+</p>
+
+<h2>Nested Objects</h2>
+<p>
+Values in an object can be another object:
+</p>
+<h3>Example</h3>
+<pre>
+myObj = {
+  name:"John",
+  age:30,
+  cars: {
+    car1:"Ford",
+    car2:"BMW",
+    car3:"Fiat"
+  }
+}
+</pre>
+<p>
+You can access nested objects using the dot notation or the bracket notation:
+</p>
+<h3>Example</h3>
+<pre>
+myObj.cars.car2;
+</pre>
+<p>or</p>
+<h3>Example</h3>
+<pre>
+myObj.cars["car2"];
+</pre>
+<p>or</p>
+<h3>Example</h3>
+<pre>
+myObj["cars"]["car2"];
+</pre>
+
+<p>or</p>
+<h3>Example</h3>
+<pre>
+let p1 = "cars";
+let p2 = "car2";
+myObj[p1][p2];
+</pre>
+
+<h2>Nested Arrays and Objects</h2>
+
+<p>
+Values in objects can be arrays, and values in arrays can be objects:
+</p>
+<h3>Example</h3>
+<pre>
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus"
+    ,"Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+}
+</pre>
+<p>
+To access arrays inside arrays, use a for-in loop for each array:
+</p>
+<h3>Example</h3>
+<pre>
+for (let i in myObj.cars) {
+  x += "&lt;h1&gt;" + myObj.cars[i].name + "&lt;/h1&gt;";
+  for (let j in myObj.cars[i].models) {
+    x += myObj.cars[i].models[j];
+  }
+}
+</pre>
+<h3>Output</h3>
+<div>
+<h3>Nested JavaScript Objects and Arrays.</h3>
+<p id="demo5"></p>
+
+<script>
+{
+let x = "";
+const myObj = {
+  name: "John",
+age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+]
+}
+
+for (let i in myObj.cars) {
+  x += "<h2>" + myObj.cars[i].name + "</h2>";
+  for (let j in myObj.cars[i].models) {
+x += myObj.cars[i].models[j] + "<br>";
+  }
+}
+
+document.getElementById("demo5").innerHTML = x;
+}
+</script>
+</div>
+
+<h2>Property Attributes</h2>
+<p>
+All properties have a name. In addition they also have a value.<br>
+
+The value is one of the property's attributes.<br>
+
+Other attributes are: enumerable, configurable, and writable.<br>
+
+These attributes define how the property can be accessed (is it readable?, is it writable?)<br>
+
+In JavaScript, all attributes can be read, but only the value attribute can be changed (and only if the property is writable.<br>
+
+( ECMAScript 5 has methods for both getting and setting all property attributes)
+</p>
+
+<h2>Prototype Properties</h2>
+<p>
+JavaScript objects inherit the properties of their prototype. <br>
+
+The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.
+</p>
+
+</body>
+</html>

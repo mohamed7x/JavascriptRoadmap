@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Classes</h1>
+
+<p>
+ECMAScript 2015, also known as ES6, introduced JavaScript Classes.
+
+JavaScript Classes are templates for JavaScript Objects.
+</p>
+
+<h2>
+JavaScript Class Syntax
+</h2>
+<p>
+Use the keyword class to create a class.<br>
+
+Always add a method named constructor():<br> 
+Syntax
+</p>
+<pre>
+class ClassName {
+  constructor() { ... }
+  }
+</pre>
+<h3>Example</h3>
+<pre>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+</pre>
+
+<p>
+The example above creates a class named "Car".<br>
+
+The class has two initial properties: "name" and "year".
+</p>
+
+<p><b>
+  Note:
+</b>
+A JavaScript class is not an object.<br>
+
+It is a template for JavaScript objects.
+</p>
+
+<h2>Using a Class</h2>
+<p>
+When you have a class, you can use the class to create objects:
+</p>
+<h3>example</h3>
+<pre>
+let myCar1 = new Car("Ford", 2014);
+let myCar2 = new Car("Audi", 2019);
+</pre>
+
+<h3>Output:</h3>
+<div>
+<p>How to use a JavaScript Class.</p>
+<p id="demo"></p>
+<script>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+myCar.name + " " + myCar.year;
+</script>
+</div>
+
+<p>
+The example above uses the Car class to create two Car objects.
+</p>
+<p>
+  <b>Note:</b>
+The constructor method is called automatically when a new object is created.
+</p>
+
+<h2>The Constructor Method</h2>
+<p>
+
+The constructor method is a special method:
+
+<ul>
+  <li>It has to have the exact name "constructor"</li>
+  <li>It is executed automatically when a new object is created</li>
+  <li>It is used to initialize object properties</li>
+</ul>
+
+If you do not define a constructor method, JavaScript will add an empty constructor method.
+</p>
+
+<h2>Class Methods</h2>
+<p>
+Class methods are created with the same syntax as object methods.<br><br>
+
+Use the keyword class to create a class.
+<br><br>
+Always add a constructor() method.<br><br>
+
+Then add any number of methods.<br>
+</p>
+<h3>Syntax</h3>
+<pre>
+class ClassName {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+</pre>
+
+<p>Create a Class method named "age", that returns the Car age:</p>
+<h3>example</h3>
+<pre>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+</pre>
+
+<h3>Output:</h3>
+<div>
+<p>How to define and use a Class method.</p>
+<p id="demo1"></p>
+<script>
+class Car1 {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+}
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+let myCar1 = new Car1("Ford", 2014);
+document.getElementById("demo1").innerHTML =
+"My car is " + myCar1.age() + " years old.";
+</script>
+</div>
+
+<p>You can send parameters to Class methods:</p>
+
+<h3>example</h3>
+<pre>
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age(x) {
+    return x - this.year;
+  }
+}
+
+let date = new Date();
+let year = date.getFullYear();
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML=
+"My car is " + myCar.age(year) + " years old.";
+</pre>
+
+<h3>Output:</h3>
+<div>
+<p>Pass a parameter into the "age()" method.</p>
+<p id="demo2"></p>
+<script>
+class Car2 {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+}
+  age(x) {
+    return x - this.year;
+  }
+}
+let date2 = new Date();
+let year = date2.getFullYear();
+
+let myCar2 = new Car2("Ford", 2014);
+document.getElementById("demo2").innerHTML=
+"My car is " + myCar2.age(year) + " years old.";
+</script>
+</div>
+
+</body>
+</html>

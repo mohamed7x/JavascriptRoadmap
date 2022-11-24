@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Set</h1>
+<p style="background-color: green;">
+A JavaScript Set is a collection of unique values.<br><br>
+
+Each value can only occur once in a Set.
+<br><br>
+A Set can hold any value of any data type.
+</p>
+
+<h2>Set Methods</h2>
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>new Set()</td>
+    <td>Creates a new Set</td>
+  </tr>
+<tr>
+    <td>add()</td>
+    <td>Adds a new element to the Set</td>
+  </tr>
+<tr>
+    <td>delete()</td>
+    <td>Removes an element from a Set</td>
+  </tr>
+<tr>
+    <td>has()</td>
+    <td>Returns true if a value exists</td>
+  </tr>
+<tr>
+    <td>clear()</td>
+    <td>Removes all elements from a Set</td>
+  </tr>
+<tr>
+    <td>forEach()</td>
+    <td>Invokes a callback for each element</td>
+  </tr>
+<tr>
+    <td>values()</td>
+    <td>Returns an Iterator with all the values in a Set</td>
+  </tr>
+<tr>
+    <td>keys()</td>
+    <td>Same as values()</td>
+  </tr>
+<tr>
+    <td>entries()</td>
+    <td>Returns an Iterator with the [value,value] pairs from a Set</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>Returns the number elements in a Set</td>
+  </tr>
+</table>
+
+<h2>How to Create a Set</h2>
+<p>
+You can create a JavaScript Set by:
+<ul>
+  <li>Passing an Array to <span style="color: red;">new Set()</span> </li>
+<li>Create a new Set and use <span style="color: red;">add()</span> to add values</li>
+<li>Create a new Set and use <span style="color: red;">add()</span> to add variables</li>
+</ul>
+</p>
+<h2>The new Set() Method</h2>
+<p>
+Pass an Array to the <span style="color: red;">new Set()</span> constructor:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create a Set
+const letters = new Set(["a","b","c"]);
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Create a Set from an Array:</p>
+<p id="demo"></p>
+<script>
+// Create a Set
+const letters = new Set(["a","b","c"]);
+// Display set.size
+document.getElementById("demo").innerHTML = letters.size;
+</script>
+</div>
+<p>Create a Set and add literal values:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create a Set
+const letters = new Set();
+
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Add values to a Set:</p>
+<p id="dem1"></p>
+
+<script>
+{
+// Create a Set
+const letters = new Set();
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+// Display set.size
+document.getElementById("dem1").innerHTML =
+letters.size;
+}
+</script>
+</div>
+
+<p>Create a Set and add variables:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create Variables
+const a = "a";
+const b = "b";
+const c = "c";
+
+// Create a Set
+const letters = new Set();
+
+// Add Variables to the Set
+letters.add(a);
+letters.add(b);
+letters.add(c);
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Add variables to a Set:</p>
+
+<p id="demo2"></p>
+<script>
+{
+// Create a Set
+const letters = new Set();
+
+// Create Variables
+const a = "a";
+const b = "b";
+const c = "c";
+// Add the Variables to the Set
+letters.add(a);
+letters.add(b);
+letters.add(c);
+
+// Display set.size
+document.getElementById("demo2").innerHTML = letters.size;
+}
+</script>
+</div>
+<h2>The add() Method</h2>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+letters.add("d");
+letters.add("e");
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Adding new elements to a Set:</p>
+<p id="demo3"></p>
+<script>
+{
+// Create a new Set
+const letters = new Set(["a","b","c"]);
+// Add a new Element
+letters.add("d");
+letters.add("e");
+// Display set.size
+document.getElementById("demo3").innerHTML = letters.size;
+}
+</script>
+</div>
+
+<p>If you add equal elements, only the first will be saved:</p>
+
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+letters.add("a");
+letters.add("b");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+  
+<p>Adding equal elements to a Set:</p>
+
+<p id="demo4"></p>
+
+<script>
+{
+// Create a Set
+const letters = new Set();
+  
+letters.add("a");
+letters.add("b");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+letters.add("c");
+// Display set.size
+document.getElementById("demo4").innerHTML = letters.size;
+}
+</script>
+</div>
+
+<h2>The forEach() Method</h2>
+<p>The <span style="color: red;">forEach()</span> method invokes a function for each Set element:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create a Set
+const letters =
+new Set(["a","b","c"]);
+
+// List all entries
+let text = "";
+letters.forEach (function(value) {
+  text += value;
+})
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+ <p>forEach() calls a function for each element:</p>
+
+<p id="demo5"></p>
+
+<script>
+{
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+// List all Elements
+let text = "";
+letters.forEach (function(value) {
+  text += value + "<br>";
+})
+document.getElementById("demo5").innerHTML = text;
+}
+</script>
+</div>
+
+<h2>The values() Method</h2>
+<p>The <span style="color: red;">values()</span> method returns an Iterator object containing all the values in a Set:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+letters.values()   
+// Returns [object Set Iterator]
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Set.values() returns a Set Iterator:</p>
+
+<p id="demo6"></p>
+
+<script>
+{
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+// Display set.size
+document.getElementById("demo6").innerHTML = letters.values();
+}
+</script>
+</div>
+<p>Now you can use the Iterator object to access the elements:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create an Iterator
+const myIterator = letters.values();
+
+// List all Values
+let text = "";
+for (const entry of myIterator) {
+  text += entry;
+}
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Iterating Set values:</p>
+
+<p id="demo7"></p>
+
+<script>
+{
+// Create a Set
+const letters = new Set(["a","b","c"]);
+// List all Elements
+let text = "";
+for (const x of letters.values()) {
+  text += x + "<br>";
+}
+
+document.getElementById("demo7").innerHTML = text;
+}
+</script>
+</div>
+
+<h2>The keys() Method</h2>
+<p style="background-color: #ffffcc;">
+A Set has no keys.<br><br>
+
+<span style="color: red">keys()</span> returns the same as <span style="color: red;">values()</span>.<br><br>
+
+This makes Sets compatible with Maps.
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+letters.keys()   
+// Returns [object Set Iterator]
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Set.keys() returns a Set Iterator:</p>
+<p id="demo8"></p>
+<script>
+{
+// Create a Set
+const letters = new Set(["a","b","c"]);
+// Display set.size
+document.getElementById("demo8").innerHTML = letters.keys();
+}
+</script>
+</div>
+<h2>The entries() Method</h2>
+<p style="background-color: #ffffcc;">
+A Set has no keys.<br><br>
+
+<span style="color: red;">entries()</span> returns [value,value] pairs instead of [key,value] pairs.<br><br>
+
+This makes Sets compatible with Maps:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create an Iterator
+const myIterator = letters.entries();
+
+// List all Entries
+let text = "";
+for (const entry of myIterator) {
+  text += entry;
+}
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>entries() Returns an Iterator with [value,value] pairs from a Set:</p>
+<p id="demo9"></p>
+<script>
+{
+// Create a Set
+const letters = new Set(["a","b","c"]);
+// List all entries
+const iterator = letters.entries();
+let text = "";
+for (const entry of iterator) {
+  text += entry + "<br>";
+}
+document.getElementById("demo9").innerHTML = text;
+}
+</script>
+</div>
+
+<h2>Sets are Objects</h2>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<p>For a Set, <span style="color: red;">typeof</span> returns object:</p>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+typeof letters;      
+// Returns object
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>The typeof operator returns object:</p>
+<p id="demo10"></p>
+<script>
+{
+// Create a new Set
+const letters = new Set(["a","b","c"]);
+// Display typeof
+document.getElementById("demo10").innerHTML = typeof letters;
+}
+</script>
+</div>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<p>For a Set, <span style="color: red;">instanceof Set</span> returns true:</p>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+letters instanceof Set; 
+// Returns true
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>The instanceof operator returns true:</p>
+
+<p id="demo11"></p>
+
+<script>
+{
+// Create a new Set
+const letters = new Set(["a","b","c"]);
+
+// Display typeof
+document.getElementById("demo11").innerHTML = letters instanceof Set;
+}
+</script>
+</div>
+
+</body>
+</html>

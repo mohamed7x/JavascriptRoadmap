@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Object Accessors</h1>
+
+<h2>JavaScript Accessors (Getters and Setters)</h2>
+
+<p>
+ECMAScript 5 (ES5 2009) introduced Getter and Setters.
+
+Getters and setters allow you to define Object Accessors (Computed Properties).
+</p>
+<h2>JavaScript Getter (The get Keyword)</h2>
+
+<p>This example uses a <span style="color: red;">lang</span> property to <span style="color: red;">get</span> the value of the <span style="color: red;">language</span> property.</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language;
+  }
+};
+
+// Display data from the object using
+a getter:
+document.getElementById("demo").innerHTML =
+person.lang;
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Getters and setters allow you to get 
+and set object properties via methods.</p>
+
+<p>This example uses a lang property to 
+get the value of the language property:</p>
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+get lang() {
+    return this.language;
+  }
+};
+
+// Display data from the object using a getter:
+document.getElementById("demo").innerHTML = person.lang;
+</script>
+</div>
+
+<h2>
+JavaScript Setter (The set Keyword)
+</h2>
+<p>
+This example uses a  <span style="color: red;">lang</span> property to  <span style="color: red;">set</span> the value of the  <span style="color: red;">language</span>  property.
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "",
+  set lang(value) {
+    this.language = value;
+  }
+};
+
+// Set an object property using a setter:
+person.lang = "en";
+
+// Display data from the object:
+document.getElementById("demo").innerHTML =
+person.language;
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Getters and setters allow you to 
+get and set properties via methods.</p>
+
+<p>This example uses a lang property to 
+set the value of the language property.</p>
+<p id="demo1"></p>
+
+<script>
+{
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "NO",
+ set lang(value) {
+    this.language = value;
+  }
+};
+
+// Set a property using set:
+person.lang = "en";
+// Display data from the object:
+document.getElementById("demo1").innerHTML = person.language;
+}
+</script>
+</div>
+
+<h2>JavaScript Function or Getter?</h2>
+<p>
+What is the differences between these two examples?
+</p>
+
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example 1</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " +
+    this.lastName;
+  }
+};
+
+// Display data from the object using
+a method:
+document.getElementById("demo").innerHTML =
+person.fullName();
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Object data can be accessed using
+property stored as a function.</p>
+
+<p id="demo2"></p>
+
+<script>
+{
+// Create an object:
+const person = {
+firstName: "John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object using a method:
+document.getElementById("demo2").innerHTML = person.fullName();
+}
+</script>
+</div>
+
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example 2</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  get fullName() {
+    return this.firstName + " " +
+    this.lastName;
+  }
+};
+
+// Display data from the object using 
+a getter:
+document.getElementById("demo").innerHTML =
+person.fullName;
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Object data can be accessed using a getter.</p>
+
+<p id="demo3"></p>
+
+<script>
+{
+// Create an object:
+const person = {
+firstName: "John",
+  lastName: "Doe",
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object using a getter:
+document.getElementById("demo3").innerHTML = person.fullName;
+}
+</script>
+</div>
+
+<p>
+Example 1 access fullName as a function: person.fullName().<br><br>
+
+Example 2 access fullName as a property: person.fullName.<br><br>
+
+The second example provides a simpler syntax.
+</p>
+
+<h2>Data Quality</h2>
+<p>JavaScript can secure better data quality when using getters and setters.<br><br>
+
+Using the <span style="color: red;">lang</span> property, in this example, returns the value of the <span style="color: red;">language</span> property in upper case:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language.toUpperCase();
+  }
+};
+
+// Display data from the object using
+a getter:
+document.getElementById("demo").innerHTML =
+person.lang;
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Getters and setters allow you to 
+get and set properties via methods.</p>
+
+<p id="dem4"></p>
+
+<script>
+{
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language.toUpperCase();
+  }
+};
+// Display data from the object using a getter:
+document.getElementById("dem4").innerHTML =
+person.lang;
+}
+</script>
+</div>
+
+<p>Using the <span style="color: red;">lang</span> property, in this example, stores an upper case value in the <span style="color: red;">language</span> property:</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example 1</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "",
+  set lang(v as lue) {
+    this.language = value.toUpperCase();
+  }
+};
+
+// Set an object property using a setter:
+person.lang = "en";
+
+// Display data from the object:
+document.getElementById("demo").innerHTML =
+person.language;
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Getters and setters allow you to
+get and set properties via methods.</p>
+<p id="dem5"></p>
+<script>
+{
+// Create an object:
+const person = {
+  firstName: "John",
+lastName: "Doe",
+  language: "",
+  set lang(value) {
+    this.language = value.toUpperCase();
+  }
+};
+// Set a property using set:
+person.lang = "en";
+
+// Display data from the object:
+document.getElementById("dem5").innerHTML =
+person.language;
+}
+</script>
+</div>
+
+<h2>Why Using Getters and Setters?</h2>
+<p>
+  <ul>
+ <li>It gives simpler syntax</li>
+ <li>It allows equal syntax for properties and methods</li>
+ <li>It can secure better data quality</li>
+ <li>It is useful for doing things behind-the-scenes</li>
+  </ul></p>
+
+<h2>Object.defineProperty()</h2>
+<p>
+The <span style="color: red;">Object.defineProperty()</span>  method can also be used to add Getters and Setters:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>A Counter Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Define object
+const obj = {counter : 0};
+
+// Define setters and getters
+Object.defineProperty(obj, "reset",
+{
+  get : function () {this.counter = 0;}
+});
+Object.defineProperty(obj, "increment", 
+{
+  get : function () {this.counter++;}
+});
+Object.defineProperty(obj, "decrement",
+{
+  get : function () {this.counter--;}
+});
+Object.defineProperty(obj, "add", 
+{
+  set : function (value) {this.counter +=
+  value;}
+});
+Object.defineProperty(obj, "subtract",
+{
+  set : function (value) {this.counter -=
+  value;}
+});
+
+// Play with the counter:
+obj.reset;
+obj.add = 5;
+obj.subtract = 1;
+obj.increment;
+obj.decrement;
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Perfect for creating counters:</p>
+<p id="demo7"></p>
+<script>
+{
+// Define an object
+const obj = {counter : 0};
+// Define Setters and Getters
+Object.defineProperty(obj, "reset", {
+  get : function () {this.counter = 0;}
+});
+Object.defineProperty(obj, "increment", {
+get : function () {this.counter++;}
+});
+Object.defineProperty(obj, "decrement", {
+  get : function () {this.counter--;}
+});
+Object.defineProperty(obj, "add", {
+  set : function (value) {this.counter += value;}
+});
+Object.defineProperty(obj, "subtract", {
+  set : function (value) {this.counter -= value;}
+});
+
+// Play with counter:
+obj.reset;
+obj.add = 5;
+obj.subtract = 1;
+obj.increment;
+obj.decrement;
+document.getElementById("demo7").innerHTML = obj.counter;
+}
+</script>
+</div>
+
+
+
+</body>
+</html>

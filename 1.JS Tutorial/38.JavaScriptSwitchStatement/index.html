@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h1>JavaScript Switch Statement</h1>
+<p>The switch statement is used to perform different actions based on different conditions.</p>
+<h2>The JavaScript Switch Statement</h2>
+<p>Use the switch statement to select one of many code blocks to be executed.</p>
+<h3>Syntax</h3>
+<code>
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+</code>
+<p>
+This is how it works:
+<ul>
+  <li>
+The switch expression is evaluated once.
+  </li>
+  <li>
+The value of the expression is compared with the values of each case.
+  </li>
+  <li>
+If there is a match, the associated block of code is executed.
+  </li>
+  <li>
+If there is no match, the default code block is executed.
+  </li>
+</ul>
+</p>
+
+<h3>Example</h3>
+<p>
+The getDay() method returns the weekday as a number between 0 and 6.<br>
+
+(Sunday=0, Monday=1, Tuesday=2 ..)<br>
+
+This example uses the weekday number to calculate the weekday name:
+</p>
+<code>
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
+</code>
+<div>
+<p id="demo"></p>
+<script>
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+day = "Friday";
+    break;
+  case  6:
+    day = "Saturday";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+</script>
+</div>
+
+<h2>The break Keyword</h2>
+<p>
+When JavaScript reaches a break keyword, it breaks out of the switch block.<br><br>
+
+This will stop the execution inside the switch block.<br><br>
+
+It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.
+</p>
+
+<p><b>Note: </b>
+If you omit the break statement, the next case will be executed even if the evaluation does not match the case.
+</p>
+
+<h2>
+The default Keyword
+</h2>
+<p>
+The default keyword specifies the code to run if there is no case match:
+</p>
+<h3>
+Example
+</h3>
+<p>
+The getDay() method returns the weekday as a number between 0 and 6.<br><br>
+
+If today is neither Saturday (6) nor Sunday (0), write a default message:
+</p>
+<code>
+switch (new Date().getDay()) {
+  case 6:
+    text = "Today is Saturday";
+    break;
+  case 0:
+    text = "Today is Sunday";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+</code>
+
+<p>
+The default case does not have to be the last case in a switch block:
+</p>
+
+<code>
+Example
+switch (new Date().getDay()) {
+  default:
+    text = "Looking forward to the Weekend";
+    break;
+  case 6:
+    text = "Today is Saturday";
+    break;
+  case 0:
+    text = "Today is Sunday";
+}
+</code>
+<p>
+If default is not the last case in the switch block, remember to end the default case with a break.
+</p>
+
+<h2>Common Code Blocks</h2>
+<p>
+Sometimes you will want different switch cases to use the same code.<br><br>
+
+In this example case 4 and 5 share the same code block, and 0 and 6 share another code block:
+</p>
+
+<h3>Example</h3>
+
+<code>
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+    
+</code>
+
+<h2>Switching Details</h2>
+<p>
+If multiple cases matches a case value, the first case is selected.<br><br>
+
+If no matching cases are found, the program continues to the default label.<br><br>
+
+If no default label is found, the program continues to the statement(s) after the switch.
+</p>
+
+<h2>Strict Comparison</h2>
+<p>
+Switch cases use strict comparison (===).
+<br><br>
+The values must be of the same type to match.<br><br>
+
+A strict comparison can only be true if the operands are of the same type.<br><br>
+
+In this example there will be no match for x:
+</p>
+
+<h3>Example</h3>
+<code>
+let x = "0";
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+</code>
+
+<div>
+<p id="demo1"></p>
+
+<script>
+let x = "0";
+
+switch (x) {
+  case 0:
+text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+document.getElementById("demo1").innerHTML = text;
+</script>
+</div>
+
+
+</body>
+</html>

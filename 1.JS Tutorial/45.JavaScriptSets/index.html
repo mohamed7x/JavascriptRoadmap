@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Sets</h1>
+
+<p>
+A JavaScript Set is a collection of unique values.<br>
+
+Each value can only occur once in a Set.
+</p>
+
+<h2>Essential Set Methods</h2>
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>new</td>
+    <td>Set()	Creates a new Set</td>
+  </tr>
+<tr>
+    <td>add()</td>
+    <td>Adds a new element to the Set </td>
+  </tr>
+<tr>
+    <td>delete()</td>
+    <td>Removes an element from a Set</td>
+  </tr>
+<tr>
+    <td>has()</td>
+    <td>Returns true if a value exists in the Set</td>
+  </tr>
+<tr>
+    <td>forEach()</td>
+    <td>Invokes a callback for each element in the Set</td>
+  </tr>
+<tr>
+    <td>values()</td>
+    <td>Returns an iterator with all the values in a Set</td>
+  </tr>
+<tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+<tr>
+    <td>size</td>
+    <td>Returns the number of elements in a Set</td>
+  </tr>
+</table>
+
+<h2>How to Create a Set</h2>
+<p>
+You can create a JavaScript Set by:<br><br>
+<ul>
+  <li>Passing an Array to new Set()</li>
+  <li>Create a new Set and use add() to add values</li>
+  <li>Create a new Set and use add() to add variables</li>
+</ul>
+</p>
+<h2>The new Set() Method</h2>
+<p>
+Pass an Array to the new Set() constructor:
+</p>
+<h3>Example</h3>
+<code>
+// Create a Set
+const letters = new Set(["a","b","c"]);
+</code>
+<h3>Output:</h3>
+<div>
+<p>Create a Set from an Array:</p>
+<p id="demo"></p>
+<script>
+// Create a Set
+const letters = new Set(["a","b","c"]);
+// Display set.size
+document.getElementById("demo").innerHTML = letters.size;
+</script>
+</div>
+
+<p>Create a Set and add values:</p>
+<h3>Example</h3>
+<code>
+// Create a Set
+const letters = new Set();
+
+// Add Values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+</code>
+
+<h3>Output</h3>
+
+<div>
+<p>Add values to a Set:</p>
+<p id="demo1"></p>
+<script>
+// Create a Set
+const letters1 = new Set();
+// Add Values to the Set
+letters1.add("a");
+letters1.add("b");
+letters1.add("c");
+
+// Display set.size
+document.getElementById("demo1").innerHTML = letters1.has("a")
+;
+</script>
+</div>
+
+<p>Create a Set and add variables:</p>
+
+<h3>Example</h3>
+<code>
+// Create a Set
+const letters = new Set();
+
+// Create Variables
+const a = "a";
+const b = "b";
+const c = "c";
+
+// Add Variables to the Set
+letters.add(a);
+letters.add(b);
+letters.add(c);
+</code>
+
+<h3>Output:</h3> 
+<div>
+<p>Add variables to a Set:</p>
+<p id="demo2"></p>
+<script>
+// Create a Set
+const letters2 = new Set();
+
+// Create Variables
+const a = "a";
+const b = "b";
+const c = "c";
+
+// Add the Variables to the Set
+letters2.add(a);
+letters2.add(b);
+letters2.add(c);
+
+// Display set.size
+document.getElementById("demo2").innerHTML = letters2.size;
+</script>
+</div>
+
+<h2>The add() Method</h2>
+<h3>Example</h3>
+<code>
+letters.add("d");
+letters.add("e");
+</code>
+
+<p>
+If you add equal elements, only the first will be saved:
+</p>
+
+<code>
+letters.add("d");
+letters.add("e");
+letters.add("f");
+letters.add("f");
+letters.add("f");
+letters.add("f");
+letters.add("f");
+letters.add("f");
+</code>
+
+<h2>The forEach() Method</h2>
+<p>
+The forEach() method invokes (calls) a function for each Set element:
+</p>
+
+<h3>
+Example
+</h3>
+<code>
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+// List all Elements
+let text = "";
+letters.forEach (function(value) {
+  text += value;
+})
+</code>
+
+<h3>Output:</h3>
+<div>
+<h2>JavaScript Sets</h2>
+<p>forEach() calls a function for each element:</p>
+<p id="demo3"></p>
+<script>
+// Create a Set
+const letters3 = new Set(["a","b","c"]);
+// List all Elements
+let text3 = "";
+letters3.forEach (function(value) {
+  text3 += value + "<br>";
+})
+
+document.getElementById("demo3").innerHTML = text3;
+</script>
+</div>
+
+<h2>The values() Method</h2>
+<p>The values() method returns a new iterator object containing all the values in a Set:</p>
+
+<h3>Example</h3>
+<code>
+letters.values()   
+// Returns [object Set Iterator]
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>Set.values() returns a Set Iterator:</p>
+<p id="demo4"></p>
+<script>
+// Create a Set
+const letters4 = new Set(["a","b","c"]);
+// Display set.size
+document.getElementById("demo4").innerHTML = letters4.values();
+</script>
+</div>
+
+
+<p>Now you can use the Iterator object to access the elements:</p>
+
+<h3>Example</h3>
+<code>
+// List all Elements
+let text = "";
+for (const x of letters.values()) {
+  text += x;
+}
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>Iterating Set values:</p>
+<p id="demo5"></p>
+<script>
+// Create a Set
+const letters5 = new Set(["a","b","c"]);
+// List all Elements
+let text5 = "";
+for (const x5 of letters5.values()) {
+  text5 += x5 + "<br>";
+}
+document.getElementById("demo5").innerHTML = text5;
+</script>
+</div>
+
+
+
+
+</body>
+</html>

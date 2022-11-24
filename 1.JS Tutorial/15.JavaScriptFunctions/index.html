@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h1>JavaScript Functions</h1>
+
+<form action="../JavaScriptObjects/index.html">
+  <input type="submit" value="Go to Google" />
+</form>
+
+
+<p>
+A JavaScript function is a block of code designed to perform a particular task. <br>
+
+A JavaScript function is executed when "something" invokes it (calls it).
+</p>
+
+<h3>Example</h3>
+<code>
+function myFunction(p1, p2) {
+  return p1 * p2;   // The function returns the product of p1 and p2
+}
+</code>
+
+<div>
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+</div>
+
+<h2>JavaScript Function Syntax</h2>
+<p>
+A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses (). <br>
+
+Function names can contain letters, digits, underscores, and dollar signs (same rules as variables). <br>
+
+The parentheses may include parameter names separated by commas:
+(parameter1, parameter2, ...) <br>
+
+The code to be executed, by the function, is placed inside curly brackets: {}
+</p>
+
+<code>
+function name(parameter1, parameter2, parameter3) { <br>
+  // code to be executed <br>
+}
+</code>
+
+<p>
+Function parameters are listed inside the parentheses () in the function definition.
+<br>
+Function arguments are the values received by the function when it is invoked.
+<br>
+Inside the function, the arguments (the parameters) behave as local variables.
+</p>
+
+<h2>
+Function Invocation
+</h2>
+<p>
+The code inside the function will execute when "something" invokes (calls) the function: <br>
+
+<ul>
+  <li>
+When an event occurs (when a user clicks a button)
+  </li>
+  <li>
+When it is invoked (called) from JavaScript code
+  </li>
+  <li>
+Automatically (self invoked)
+  </li>
+</ul>
+
+You will learn a lot more about function invocation later in this tutorial.
+</p>
+
+<h2>Function Return</h2>
+<p>
+When JavaScript reaches a return statement, the function will stop executing. <br>
+
+If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement. <br>
+
+Functions often compute a return value. The return value is "returned" back to the "caller":
+</p>
+
+<h3>Example</h3>
+<code>
+let x = myFunction(4, 3);  <br>
+// Function is called, return value will end up in x <br>
+
+function myFunction(a, b) { <br>
+  return a * b;  <br>           
+  // Function returns the product of a and b <br>
+}
+</code>
+
+<div>
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+
+<p>The result in x will be:</p>
+<p id="demo1"></p>
+<script>
+function myFunction(a, b) {
+  return a * b;
+}
+var x = myFunction(4, 3);
+document.getElementById("demo1").innerHTML = x;
+</script>
+</div>
+
+<h2>Why Functions?</h2>
+<p>
+You can reuse code: Define the code once, and use it many times.<br>
+
+You can use the same code many times with different arguments, to produce different results. </p>
+<h3>
+Example: Convert Fahrenheit to Celsius:
+</h3>
+<code>
+function toCelsius(fahrenheit) { <br>
+  return (5/9) * (fahrenheit-32); <br>
+} <br>
+document.getElementById("demo").innerHTML = toCelsius(77);
+</code>
+
+<div>
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+<p>convert 77 Fahrenheit to Celsius</p>
+<p>result:</p>
+<p id="demo2"></p>
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+document.getElementById("demo2").innerHTML = toCelsius(77);
+</script>
+</div>
+
+<h2>
+The () Operator Invokes the Function
+</h2>
+<p>
+Using the example above, toCelsius refers to the function object, and toCelsius() refers to the function result. <br>
+
+Accessing a function without () will return the function object instead of the function result.
+</p>
+<h3>
+Example
+</h3>
+<code>
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+}
+document.getElementById("demo").innerHTML = toCelsius;
+</code>
+
+<h3>Output</h3>
+<div>
+<p>Accessing a function without () will return the function definition instead of the function result:</p>
+<p id="demo3"></p>
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+document.getElementById("demo3").innerHTML = toCelsius;
+</script>
+</div>
+
+<h2>
+Functions Used as Variable Values
+</h2>
+<p>
+
+Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.
+
+
+
+
+</p>
+<h3>Example</h3>
+<p>Instead of using a variable to store the return value of a function:</p>
+<code>
+let x = toCelsius(77);
+let text = "The temperature is " + x + " Celsius";
+</code>
+<p>
+You can use the function directly, as a variable value:
+</p>
+<code>
+let text = "The temperature is " + toCelsius(77) + " Celsius";
+</code>
+
+<div>
+<p id="demo4"></p>
+
+<script>
+document.getElementById("demo4").innerHTML = "The temperature is " + toCelsius(77) + " Celsius";
+
+function toCelsius(fahrenheit) {
+return (5/9) * (fahrenheit-32);
+} 
+</script>
+</div>
+
+<h2>Local Variables</h2>
+<p> Variables declared within a JavaScript function, become LOCAL to the function.
+<br>
+Local variables can only be accessed from within the function.</p>
+
+<h3>Example</h3>
+
+<code>
+// code here can NOT use carName <br>
+
+function myFunction() { <br>
+  let carName = "Volvo"; <br>
+  // code here CAN use carName <br>
+} <br>
+
+// code here can NOT use carName
+</code>
+<h3>Output</h3>
+<div>
+<p>Outside myFunction() carName is undefined.</p>
+
+<p id="demo11"></p>
+<p id="demo12"></p>
+
+<script>
+myFunction();
+
+function myFunction() {
+  let carName = "Volvo";
+  document.getElementById("demo11" ).innerHTML = typeof carName + " " + carName;
+}
+
+document.getElementById("demo12").innerHTML =
+typeof carName;
+</script>
+  
+</div>
+
+
+
+<p>
+Since local variables are only recognized inside their functions, variables with the same name can be used in different functions. <br>
+
+Local variables are created when a function starts, and deleted when the function is completed.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

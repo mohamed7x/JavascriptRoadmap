@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1>JavaScript Object Prototypes</h1>
+<p>
+All JavaScript objects inherit properties and methods from a prototype.<br><br>
+
+In the previous chapter we learned how to use an <b>object constructor</b>:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+function Person(first, last, age, eyecolor)
+{
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+const myFather =
+new Person("John", "Doe", 50, "blue");
+const myMother =
+new Person("Sally", "Rally", 48, "green");
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Using an object constructor:</p>
+<p id="demo"></p>
+<script>
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age + ". My mother is " + myMother.age; 
+</script>
+</div>
+
+<p>
+We also learned that you can <b>not</b> add a new property to an existing object constructor:
+</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+Person.nationality = "English";
+</pre>
+<h3>Output</h3>
+</div>
+<div></div>
+<p>
+To add a new property to a constructor, you must add it to the constructor function:
+</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+  this.nationality = "English";
+}
+</pre>
+<h3>Output</h3>
+</div>
+<div></div>
+
+<h2>Prototype Inheritance</h2>
+<p>
+All JavaScript objects inherit properties and methods from a prototype:<br><br>
+
+<ul>
+  <li> <span style="color: red;">Date</span> objects inherit from <span style="color: red;">Date.prototype</span> </li>
+  <li><span style="color: red;">Array</span> objects inherit from  <span style="color: red;">Array.prototype</span></li>
+  <li> <span style="color: red;">Person</span> objects inherit from <span style="color: red;">Person.prototype</span></li>
+</ul>
+  <br>
+
+The <span style="color: red;">Object.prototype</span> is on the top of the prototype inheritance chain:<br><br>
+
+ <span style="color: red;">Date</span> objects, <span style="color: red;">Array</span> objects, and <span style="color: red;">Person</span> objects inherit from <span style="color: red;">Object.prototype</span>.
+</p>
+
+<h2>Adding Properties and Methods to Objects</h2>
+<p>Sometimes you want to add new properties (or methods) to all existing objects of a given type.<br><br>
+
+Sometimes you want to add new properties (or methods) to an object constructor.</p>
+<h2>Using the <span style="color: red;">prototype</span> Property</h2>
+<p>
+The JavaScript <span style="color: red;">prototype</span> property allows you to add new properties to object constructors:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+Person.prototype.nationality = "English";
+</pre>
+<h3>Output</h3>
+</div>
+<div></div>
+
+<p>
+The JavaScript <span style="color: red;">prototype</span> property also allows you to add new methods to objects constructors:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+</pre>
+<h3>Output</h3>
+</div>
+<div></div>
+
+<p style="background-color: #ccffff;">
+Only modify your <b>own</b> prototypes. Never modify the prototypes of standard JavaScript objects.
+</p>
+
+</body>
+</html>

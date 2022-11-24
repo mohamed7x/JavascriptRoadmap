@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h1>JavaScript For Loop</h1>
+
+<p>Loops can execute a block of code a number of times.</p>
+
+<h2>JavaScript Loops</h2>
+<p>
+Loops are handy, if you want to run the same code over and over again, each time with a different value.<br><br>
+
+Often this is the case when working with arrays:
+</p>
+
+<h3>Instead of writing:</h3>
+<code>
+text += cars[0] + "<br>";
+text += cars[1] + "<br>";
+text += cars[2] + "<br>";
+text += cars[3] + "<br>";
+text += cars[4] + "<br>";
+text += cars[5] + "<br>";
+</code>
+<h3>
+You can write:
+</h3>
+<code>
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+  }
+</code>
+
+<h3>Output:</h3>
+<div>
+<h2>JavaScript For Loop</h2>
+<p id="demo"></p>
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+let text = "";
+for (let i = 0; i < cars.length; i++) {
+text += cars[i] + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+</script>
+</div>
+
+<h2>Different Kinds of Loops</h2>
+<p>
+JavaScript supports different kinds of loops:<br><br>
+
+<ul>
+  <li>for - loops through a block of code a number of times</li>
+  <li>for/in - loops through the properties of an object</li>
+  <li>for/of - loops through the values of an iterable object</li>
+  <li>while - loops through a block of code while a specified condition is true</li>
+  <li>do/while - also loops through a block of code while a specified condition is true</li>
+</ul>
+</p>
+
+<h3>The For Loop</h3>
+<p>
+The for statement creates a loop with 3 optional expressions:
+</p>
+
+<code>
+for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}
+</code>
+
+<p>
+Expression 1 is executed (one time) before the execution of the code block.<br><br>
+
+Expression 2 defines the condition for executing the code block.<br><br>
+
+Expression 3 is executed (every time) after the code block has been executed.<br><br>
+</p>
+
+<h3>Example</h3>
+<code>
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+</code>
+
+<h3>Output:</h3>
+<div>
+<p id="demo1"></p>
+
+<script>
+let text1 = "";
+for (let i = 0; i < 5; i++) {
+  text1 += "The number is " + i + "<br>";
+}
+
+document.getElementById("demo1").innerHTML = text1;
+</script>
+</div>
+
+<p>
+From the example above, you can read:     <br><br>
+
+Expression 1 sets a variable before the loop starts (let i = 0).<br><br>
+
+Expression 2 defines the condition for the loop to run (i must be less than 5).<br><br>
+
+Expression 3 increases a value (i++) each time the code block in the loop has been executed.
+</p>
+
+<h3>Expression 1</h3>
+<p>
+Normally you will use expression 1 to initialize the variable used in the loop (let i = 0).<br><br>
+
+This is not always the case. JavaScript doesn't care. Expression 1 is optional.
+<br><br>
+
+You can initiate many values in expression 1 (separated by comma):
+</p>
+
+<h3>Example</h3>
+<code>
+for (let i = 0, len = cars.length, text = ""; i < len; i++) {
+  text += cars[i] + "<br>";
+}
+</code>
+<h3>
+  Output:
+</h3>
+
+<div>
+<p id="demo2"></p>
+<script>
+const cars2 = ["BMW", "Volvo", "Saab", "Ford"];
+let i2, len2, text2;
+for (i2 = 0, len2 = cars2.length, text2 = ""; i2 < len2; i2++) {
+  text2 += cars2[i2] + "<br>";
+}
+document.getElementById("demo2").innerHTML = text2;
+</script>
+</div>
+
+<p>And you can omit expression 1 (like when your values are set before the loop starts):</p>
+
+<h3>Example</h3>
+<code>
+let i = 2;
+let len = cars.length;
+let text = "";
+for (; i < len; i++) {
+  text += cars[i] + "<br>";
+}
+</code>
+
+<h3>
+  Output:
+</h3>
+
+<div>
+  <p>becose start from index 2</p>
+<p id="demo3"></p>
+<script>
+const cars3 = ["BMW", "Volvo", "Saab", "Ford"];
+let i3 = 2;
+let len3 = cars3.length;
+let text3 = "";
+for (; i3 < len3; i3++) {
+  text3 += cars3[i3] + "<br>";
+}
+document.getElementById("demo3").innerHTML = text3;
+</script>
+</div>
+
+<h3>Expression 2</h3>
+<p>
+Often expression 2 is used to evaluate the condition of the initial variable.<br>
+
+This is not always the case. JavaScript doesn't care. Expression 2 is also optional.<br><br>
+
+If expression 2 returns true, the loop will start over again. If it returns false, the loop will end.
+</p>
+
+<p><b>Note: </b>
+If you omit expression 2, you must provide a break inside the loop. Otherwise the loop will never end. This will crash your browser. Read about breaks in a later chapter of this tutorial.
+</p>
+
+<h3>Expression 3</h3>
+<p>
+Often expression 3 increments the value of the initial variable. <br><br>
+
+This is not always the case. JavaScript doesn't care. Expression 3 is optional.
+<br><br>
+
+Expression 3 can do anything like negative increment (i--), positive increment (i = i + 15), or anything else.<br><br>
+
+Expression 3 can also be omitted (like when you increment your values inside the loop):
+</p>
+
+<h3>Example</h3>
+<p>
+let i = 0;
+let len = cars.length;
+let text = "";
+for (; i < len; ) {
+  text += cars[i] + "<br>";
+  i++;
+}
+</p>
+
+<h2>Loop Scope</h2>
+<p>Using var in a loop:</p>
+<h3>Example</h3>
+<code>
+var i = 5;
+for (var i = 0; i < 10; i++) {
+  // some code
+}
+// Here i is 10
+</code>
+
+<h3>Output:</h3>
+<div>
+<h2>JavaScript var in loop</h2>
+
+<p id="demo5"></p>
+<script>
+var i = 5;
+for (var i = 0; i < 10; i++) {
+  // some statements
+}
+document.getElementById("demo5").innerHTML = i;
+</script>
+</div>
+
+<p>Using let in a loop:</p>
+
+<h3>Example</h3>
+<code>
+let i = 5;
+for (let i = 0; i < 10; i++) {
+  // some code
+}
+// Here i is 5
+</code>
+
+<h3>Output:</h3>
+<div>
+<h2>JavaScript let in loop</h2>
+
+<p id="demo6"></p>
+<script>
+let i6 = 5;
+for (let i6 = 0; i6 < 10; i6++) {
+  // some statements
+}
+document.getElementById("demo6").innerHTML = i6;
+</script>
+</div>
+
+<p>
+In the first example, using var, the variable declared in the loop redeclares the variable outside the loop.<br><br>
+
+In the second example, using let, the variable declared in the loop does not redeclare the variable outside the loop.
+<br><br>
+
+When let is used to declare the i variable in a loop, the i variable will only be visible within the loop.
+</p>
+
+<h2>For/Of and For/In Loops</h2>
+<p>
+The for/in loop and the for/of loop are explained in the next chapter.
+</p>
+  
+<h2>While Loops</h2>
+<p>
+The while loop and the do/while are explained in the next chapters
+</p>
+
+
+
+
+</body>
+</html>

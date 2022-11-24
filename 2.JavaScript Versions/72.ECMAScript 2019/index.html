@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>ECMAScript 2019</h1>
+
+<p>Original JavaScript version numbers were ES5 (2009) and ES6 (2015).
+
+Since 2016, versions are named by year: ECMAScript 2016, 2017, 2018, 2019, 2020.</p>
+<h2>New Features in ES2019</h2>
+<ul>
+ <li>String.trimStart()</li>
+<li>String.trimEnd()</li>
+<li>Object.fromEntries</li>
+<li>Optional catch binding</li>
+<li>Array.flat()</li>
+<li>Array.flatMap()</li>
+<li>Revised Array.Sort()</li>
+<li>Revised JSON.stringify()</li>
+<li>Revised Function.toString()</li>
+<li>Separator symbols allowed in string litterals</li>
+</ul>
+
+<h2>JavaScript String trimStart()</h2>
+
+<p>ES2019 added the String method trimStart() to JavaScript.<br>
+
+The trimStart() method works like trim(), but removes whitespace only from the start of a string.</p>
+
+<h3>Example</h3>
+
+<pre>
+let text1 = "     Hello World!     ";
+let text2 = text1.trimStart();
+</pre>
+<h3>Output</h3>
+<div>
+<h3>JavaScript Strings</h3>
+<h4>The trimStart() Method</h4>
+
+<p id="demo"></p>
+
+<script>
+let text1 = "     Hello World!     ";
+let text2 = text1.trimStart();
+document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+</script>
+</div>
+
+<h2>JavaScript String trimEnd()</h2>
+<p>
+ES2019 added the String method trimEnd() to JavaScript.<br>
+
+The trimEnd() method works like trim(), but removes whitespace only from the end of a string.
+</p>
+<h3>Example</h3>
+<pre>let text1 = "     Hello World!     ";
+let text2 = text1.trimEnd();</pre>
+<h3>Output</h3>
+<div>
+<h3>JavaScript Strings</h3>
+<h4>The trimEnd() Method</h4>
+
+<p id="demo"></p>
+
+<script>
+let text1 = "     Hello World!     ";
+let text2 = text1.trimEnd();
+document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+</script>
+</div>
+
+<h2>JavaScript Object fromEntries()</h2>
+
+<p>ES2019 added the Object method fromEntries() to JavaScript.<br>
+
+The fromEntries() method creates an object from iterable key / value pairs</p>
+<h3>Example</h3>
+<pre>
+const fruits = [
+["apples", 300],
+["pears", 900],
+["bananas", 500]
+];
+
+const myObj = Object.fromEntries(fruits);
+
+</pre>
+
+<h3>output</h3>
+<div>
+<h1>JavaScript Objects</h1>
+<h2>The fromEntries() Method</h2>
+
+<p>The number of pears are:</p>
+<p id="demo"></p>
+
+<script>
+const fruits = [
+["apples", 300],
+["pears", 900],
+["bananas", 500]
+];
+
+const myObj = Object.fromEntries(fruits);
+document.getElementById("demo").innerHTML = myObj.pears;
+</script>
+
+</div>
+
+<h2>Optional catch Binding</h2>
+<p>From ES2019 you can omit the catch parameter if you don't need it:.</p>
+
+<h3>Example</h3>
+<p>Before 2019:</p>
+<pre>
+try {
+// code
+} catch (err) {
+// code
+}
+</pre>
+<p>After 2019</p>
+<pre>
+try {
+// code
+} catch {
+// code
+}
+</pre>
+
+<h2>JavaScript Array flat(</h2>
+
+<p>
+ES2019 added the Array flat() method to JavaScript.
+
+The flat() method creates a new array by flattening a nested array.
+</p>
+<h3>Example</h3>
+<pre>
+const myArr = [[1,2],[3,4],[5,6]];
+const newArr = myArr.flat();
+</pre>
+<h3>output</h3>
+
+<div>
+<h1>JavaScript Arrays</h1>
+<h2>The flat() Method</h2>
+
+<p id="demo"></p>
+
+<script>
+const myArr = [[1,2],[3,4],[5,6]];
+const newArr = myArr.flat();
+document.getElementById("demo").innerHTML = newArr;
+</script>
+</div>
+<h2>JavaScript Array flatMap()</h2>
+<p>
+ES2019 added the Array flatMap() method to JavaScript.
+
+The flatMap() method first maps all elements of an Array and then creates a new array by flattening the array.</p>
+
+<h3>Example</h3>
+
+<pre>
+const myArr = [1, 2, 3, 4, 5,6];
+const newArr = myArr.flatMap((x) => x * 2);
+</pre>
+
+<h3>output</h3>
+<div>
+<h1>JavaScript Arrays</h1>
+<h2>The flatMap() Method</h2>
+<p id="demo"></p>
+<script>
+const myArr = [1, 2, 3, 4, 5,6];
+const newArr = myArr.flatMap((x) => x * 2);
+document.getElementById("demo").innerHTML = newArr;
+</script>
+</div>
+
+<h2>
+Revised JSON.stringify()
+</h2>
+<p>
+ES2019 revised the JSON stringify() method.
+
+Before 2019, JSON could not stringify character encoded with \.
+</p>
+
+<h3>Examole</h3>
+<pre>
+let text = JSON.stringify("\u26D4");
+</pre>
+<h3>output</h3>
+<div>
+<h1>JavaScript JSON</h1>
+<h2>Revised stringify()</h2>
+<p id="demo"></p>
+<script>
+let text = JSON.stringify("\u26D4");
+document.getElementById("demo").innerHTML = JSON.parse(text);
+</script>
+</div>
+<p>
+Before ES2019, using JSON.stringify()JSON on UTF-8 code points (U+D800 to U+DFFF) returned broken Unicode characters like ���.<br>
+
+After this revision, strings with UTF-8 code points convert safely with JSON.stringify(), and back to the original using JSON.parse().
+</p>
+
+<h3>Stable Array.sort()</h3>
+<p>
+
+ES2019 revised the Array sort() method.
+
+Before 2019, the specification allowed unstable sorting algorithms such as QuickSort.
+
+Now, major browsers must use a stable sorting algorithm: When sorting an array of objects on a key, the elements in the list must keep their position to other objects with the same key.
+</p>
+
+<h2>
+Revised Function toString()
+</h2>
+<p>
+
+ES2019 revised the Function toString() method.
+
+The toString() method returns a string representing the source code of a function.
+
+From 2019, toString() must return the source code of the function including comments, spaces, and syntax details.
+
+Before 2019, different browsers returned different variants of the function (like without comments and spaces). From 2019 the function should be returned exactly as it is written.
+
+Example
+</p>
+<h3>Example</h3>
+<pre>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+</pre>
+<h3>Output</h3>
+<div>
+<h1>JavaScript Functions</h1>
+<h2>The toString() Method</h2>
+
+<p>The toString() method returns the function as a string:</p>
+
+<p id="demo"></p>
+<script>
+function myFunction(a, b) {
+  return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction.toString();
+</script>
+
+</div>
+
+<h2>
+Separator Symbols
+</h2>
+<p>
+
+Line separators and paragraph separator symbols (\u2028 and \u2029) are now allowed in string literals.
+
+Before 2019, these were treated as line terminators and resulted in error exceptions:
+</p>
+<h3>Example</h3>
+<pre>
+// This is valid in ES2019:
+eval('"\u2028"');
+</pre>
+<h3>Output</h3>
+<div>
+<h1>JavaScript Strings</h1>
+<p>From ES2019, line and paragraph separator symbols (\u2028 and \u2029) are allowed in string literals:</p>
+<p id="demo"></p>
+<script>
+let text = eval("'\u2028'");
+document.getElementById("demo").innerHTML = text;
+</script>
+</div>
+
+
+</body>
+</html>

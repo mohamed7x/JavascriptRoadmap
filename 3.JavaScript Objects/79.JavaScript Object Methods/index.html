@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+
+<h1>JavaScript Object Methods</h1>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="margin: auto; width: 200px; background-color: white">
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+  return this.firstName +
+    " " + this.lastName;
+  }
+};
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<h2>The JavaScript <i>this</i> Keyword</h2>
+<p>In this example, <b>this</b> refers to the <b>person</b> object.</p>
+<p>Because <b>fullName</b> is a method of the person object.</p>
+<p id="demo"></p>
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName : function() {
+return this.firstName + " " + 
+this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+</div>
+
+<h2>What is <b>this</b>?</h2>
+<p>
+
+In JavaScript, the <span style="color: red;">this</span> keyword refers to an <b>object</b>.<br><br>
+
+<b>Which</b> object depends on how <span style="color: red;">this</span> is being invoked (used or called).<br><br>
+
+The <span style="color: red;">this</span> keyword refers to different objects depending on how it is used:
+</p>
+
+
+
+<ul>
+  <li>
+In an object method, <span style="color: red;">this</span> refers to the <b>object</b>.
+  </li>
+  <li>
+Alone, <span style="color: red;">this</span> refers to the <b>global object</b>.
+  </li>
+  <li>
+In a function, <span style="color: red;">this</span> refers to the  <b>global object</b>.
+  </li>
+  <li>
+In a function, in strict mode, <span style="color: red;">this</span> is <span style="color: red;">undefined</span> .
+  </li>
+  <li>
+In an event, <span style="color: red;">this</span> refers to the <b>element</b> that received the event.
+  </li>
+  <li>
+Methods like <span style="color: red;">call()</span>,<span style="color: red;">apply()</span> , and <span style="color: red;">bind()</span> can refer <span style="color: red;">this</span> to <b>any object</b>.
+  </li>
+</ul>
+
+<div style="background-color: #ffffcc;">
+<h3>Note</h3>
+<p>
+ <span style="color: red;">this</span> is not a variable. It is a keyword. You cannot change the value of  <span style="color: red;">this</span>.<br>
+See Also:<br>
+<a href="https://www.w3schools.com/js/js_this.asp">The JavaScript this Tutorial</a></p>
+</div>
+
+<h2>JavaScript Methods</h2>
+<p>
+JavaScript methods are actions that can be performed on objects.<br><br>
+A JavaScript <b>method</b> is a property containing a <b>function definition</b>.
+</p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>firstName</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>lastName</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>age</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>eyeColor</td>
+    <td>blue</td>
+  </tr>
+  <tr>
+    <td>fullName</td>
+    <td>function() {return this.firstName + " " + this.lastName;}</td>
+  </tr>
+</table>
+	
+<p style="background-color: #ffffcc;">
+Methods are functions stored as object properties.
+</p>
+
+<h2>Accessing Object Method</h2>
+<p>
+You access an object method with the following syntax:<br>
+
+<pre>objectName.methodName()</pre>
+You will typically describe fullName() as a method of the person object, and fullName as a property.<br>
+
+The fullName property will execute (as a function) when it is invoked with ().<br>
+
+This example accesses the fullName() <b>method</b> of a person object:
+</p>
+
+	<div style="heigth: 200px; background-color: #C5C5C5;">
+	  <h3>Example</h3>
+	  <pre style="margin: auto; width: 200px; background-color: white">
+name = person.fullName();
+	  </pre>
+	  <h3>Output</h3>
+	</div>
+<div>
+<p>Creating and using an object method.</p>
+<p>A method is actually a function definition stored as a property value.</p>
+
+<p id="demo2"></p>
+<script>
+{
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+}
+};
+
+document.getElementById("demo2").innerHTML = person.fullName();
+}
+</script>
+</div>
+<p>
+If you access the fullName <b>property</b>, without (), it will return the <b>function definition</b>:
+</p>
+
+
+	<div style="heigth: 200px; background-color: #C5C5C5;">
+	  <h3>Example</h3>
+	  <pre style="margin: auto; width: 200px; background-color: white">
+name = person.fullName;
+	  </pre>
+	  <h3>Output</h3>
+	</div>
+
+<div>
+<p>An object method is a function definition stored as a property value.</p>
+<p>If you access it without (), it will return the function definition:</p>
+<p id="demo3"></p>
+<script>
+{
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+return this.firstName + " " + this.lastName;
+  }
+};
+
+document.getElementById("demo3").innerHTML = person.fullName;
+}
+</script>
+</div>
+
+<h2>Adding a Method to an Object</h2>
+<p>
+Adding a new method to an object is easy:
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="margin: auto; width: 200px; background-color: white">
+person.name = 
+function () {
+  return this.firstName + 
+  " " + this.lastName;
+};
+
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p id="demo4"></p>
+
+<script>
+{
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+};
+person.fullname = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+document.getElementById("demo4").innerHTML =
+"My father is " + person.fullname(); 
+}
+</script>
+</div>
+
+<h2>
+Using Built-In Methods
+</h2>
+<p>
+This example uses the toUpperCase() method of the String object, to convert a text to uppercase:
+</p>
+
+<pre style="border: 1px solid">
+let message = "Hello world!";
+let x = message.toUpperCase();
+</pre>
+<p>
+The value of x, after execution of the code above will be:
+</p>
+
+<pre style="border: 1px solid">
+HELLO WORLD!
+</pre>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+  <h3>Example</h3>
+  <pre style="margin: auto; width: 250px; background-color: white">
+person.name = function () {
+return (this.firstName + " " +
+this.lastName).toUpperCase();
+};
+  </pre>
+  <h3>Output</h3>
+</div>
+<div>
+<p id="demo5"></p>
+<script>
+{
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+};
+person.name = function() {
+return (this.firstName + " " + this.lastName).toUpperCase();
+};
+
+document.getElementById("demo5").innerHTML =
+"My father is " + person.name(); 
+}
+</script>
+</div>
+
+
+</body>
+</html>

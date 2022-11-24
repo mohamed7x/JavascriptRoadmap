@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Iterables</h1>
+
+<p style="background-color: green">Iterable objects are objects that can be iterated over with <span style="color: red;">for..of</span> .<br>
+
+Technically, iterables must implement the <span style="color: red;">Symbol.iterator</span> method.</p>
+
+<h1>Iterating Over a String</h1>
+<p>You can use a <span style="color: red;">for..of</span> loop to iterate over the elements of a string:</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+for (const x of "W3Schools") {
+  // code block to be executed
+}
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p>Iterate over a String:</p>
+
+<p id="demo"></p>
+
+<script>
+// Create a String
+const name = "W3Schools";
+// List all Elements
+let text = ""
+for (const x of name) {
+  text += x + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+</div>
+<h2>Iterating Over an Array</h2>
+<p>You can use a <span style="color: red;">for..of</span> loop to iterate over the elements of an Array:</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+for (const x of [1,2,3,4,5]) {
+  // code block to be executed
+}
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Iterate over an Array:</p>
+
+<p id="demo1"></p>
+
+<script>
+// Create aa Array
+const letters = ["a","b","c"];
+// List all Elements
+let text1 = "";
+for (const x of letters) {
+  text1 += x + "<br>";
+}
+document.getElementById("demo1").innerHTML = text1;
+</script>
+</div>
+<h2>JavaScript Iterators</h2>
+<p>
+The <b>iterator protocol</b> defines how to produce a <b>sequence of values</b> from an object.<br><br>
+
+An object becomes an <b>iterator</b> when it implements a <span style="color: red;">next()</span> method.<br><br>
+
+The <span style="color: red;">next()</span>  method must return an object with two properties:
+<ul>
+  <li>value (the next value)</li>
+  <li>done (true or false)</li>
+</ul>
+</p>
+<table>
+  <tr>
+    <th>value</th>
+    <td>The value returned by the iterator (Can be omitted if done is true)</td>
+  </tr>
+  <th>done</th>
+  <td>true if the iterator has completed
+false if the iterator has produced a new value </td>
+</table>
+
+<h2>Home Made Iterable</h2>
+<p>
+This iterable returns never ending: 10,20,30,40,.... Everytime <span style="color: red;">next()</span> is called:
+</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Home Made Iterable
+function myNumbers() {
+  let n = 0;
+  return {
+    next: function() {
+      n += 10;
+      return {value:n, done:false};
+    }
+  };
+}
+
+// Create Iterable
+const n = myNumbers();
+n.next(); // Returns 10
+n.next(); // Returns 20
+n.next(); // Returns 30
+</pre>
+<h3>Output</h3>
+</div>
+<div>
+<p>Home Made Iterable:</p>
+
+<p id="demo2"></p>
+
+<script>
+// Home Made Iterable
+function myNumbers() {
+  let n = 0;
+  return {
+    next: function() {
+      n += 10;
+      return {value:n, done:false};
+    }
+  };
+}
+
+// Create Iterable
+const n = myNumbers();
+n.next(); // 10
+n.next(); // 20
+n.next(); // 30
+document.getElementById("demo2").innerHTML = n.next().value;
+</script>
+</div>
+
+<p style="background-color: #ffffcc;">
+The problem with a home made iterable:<br>
+
+It does not support the JavaScript <span style="color: red;">for..of</span> statement.
+</p>
+
+<p>
+A JavaScript iterable is an object that has a  <b>Symbol.iterator</b>.<br><br>
+
+The <span style="color: red;">Symbol.iterator</span> is a function that returns a <span style="color: red;">next()</span> function.<br><br>
+
+An iterable can be iterated over with the code: <span style="color: red;">for (const x of iterable) { }</span>
+</p>
+
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+// Create an Object
+myNumbers = {};
+
+// Make it Iterable
+myNumbers[Symbol.iterator] =
+function() {
+  let n = 0;
+  done = false;
+  return {
+    next() {
+      n += 10;
+      if (n == 100) {done = true}
+      return {value:n, done:done};
+    }
+  };
+}
+</pre>
+&npsb;
+</div>
+<p>
+Now you can use <span style="color: red;">for..of</span>
+</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+for (const num of myNumbers) {
+  // Any Code Here
+}
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p id="demo4"></p>
+<script>
+{
+// Create an Object
+myNumbers = {};
+
+// Make it Iterable
+myNumbers[Symbol.iterator] = function() {
+let n = 0;
+  done = false;
+  return {
+    next() {
+      n += 10;
+      if (n == 100) {done = true}
+      return {value:n, done:done};
+    }
+};
+}
+
+let text = ""
+for (const num of myNumbers) {
+  text += num +"<br>"
+}
+document.getElementById("demo4").innerHTML = text;
+}
+</script>
+</div>
+<p>
+The Symbol.iterator method is called automatically by  <span style="color: red;">for..of</span>.<br><br>
+
+But we can also do it "manually":
+</p>
+<div style="heigth: 200px; background-color: #C5C5C5;">
+<h3>Example</h3>
+<pre style="border-left: 3px solid green; margin: auto; width: 340px; background-color: white">
+let iterator = myNumbers[Symbol.iterator]();
+
+while (true) {
+  const result = iterator.next();
+  if (result.done) break;
+  // Any Code Here
+}
+</pre>
+<h3>Output</h3>
+</div>
+
+<div>
+<p id="demo5"></p>
+
+<script>
+{
+// Create an Object
+myNumbers = {};
+// Make it Iterable
+myNumbers[Symbol.iterator] = function() {
+  let n = 0;
+  done = false;
+  return {
+    next() {
+n += 10;
+      if (n == 100) {done = true}
+      return {value:n, done:done};
+    }
+  };
+}
+// Create an Iterator
+let iterator = myNumbers[Symbol.iterator]();
+
+let text = ""
+while (true) {
+  const result = iterator.next();
+  if (result.done) break;
+text += result.value +"<br>";
+}
+
+document.getElementById("demo5").innerHTML = text;
+}
+</script>
+</div>
+
+
+</body>
+</html>

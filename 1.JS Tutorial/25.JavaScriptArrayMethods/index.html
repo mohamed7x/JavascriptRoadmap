@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Array Methods</h1>
+
+<form action="../JavaScriptSortingArrays/index.html">
+  <input type="submit" value="Go to Google" />
+</form>
+
+<h2>Converting Arrays to Strings</h2>
+<p>
+The JavaScript method toString() converts an array to a string of (comma separated) array values.
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+document.getElementById("demo").innerHTML = fruits.toString(); <br>
+// Result: Banana,Orange,Apple,Mango
+</code>
+
+<p>
+The join() method also joins all array elements into a string. <br>
+
+It behaves just like toString(), but in addition you can specify the separator:
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+document.getElementById("demo").innerHTML = fruits.join(" * "); <br>
+// Result: Banana * Orange * Apple * Mango
+</code>
+
+<h2>Popping and Pushing</h2>
+<p>
+When you work with arrays, it is easy to remove elements and add new elements.<br>
+
+This is what popping and pushing is:<br><br>
+
+Popping items out of an array, or pushing items into an array.
+
+</p>
+<h3>
+JavaScript Array pop()
+</h3>
+<p>
+The pop() method removes the last element from an array:
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.pop();
+</code>
+
+<h3>Output</h3>
+<div>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.pop();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+
+</div>
+
+<p>
+The pop() method returns the value that was "popped out":
+</p>
+<h3>Example</h3>
+<code>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+let fruit = fruits.pop();
+</code>
+
+<h3>Output</h3>
+<div>
+<p>The pop() method returns the value that was "popped out":</p>
+
+<p id="demo1a"></p>
+<p id="demo2a"></p>
+
+<script>
+const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1a").innerHTML = fruits1.pop();
+document.getElementById("demo2a").innerHTML = fruits1;
+</script>
+</div>
+
+<h2>JavaScript Array push()</h2>
+<p>
+The push() method adds a new element to an array (at the end):
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.push("Kiwi"); 
+</code>
+<h3>Output:</h3>
+<div>
+<p>The push() method appends a new element to an array:</p>
+<p id="demo1c"></p>
+<p id="demo2c"></p>
+
+<script>
+const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1c").innerHTML = fruits3;
+fruits3.push("Kiwi");
+document.getElementById("demo2c").innerHTML = fruits3;
+</script>
+</div>
+
+
+<p>
+The push() method returns the new array length:
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+let length = fruits.push("Kiwi"); <br>
+</code>
+<h3>Output:</h3>
+<div>
+<p>The push() method returns the new array length:</p>
+<p id="demo1b"></p>
+<p id="demo2b"></p>
+
+<script>
+const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1b").innerHTML = fruits2.push("Kiwi");
+document.getElementById("demo2b").innerHTML = fruits2;
+</script>
+</div>
+
+
+
+<h2>Shifting Elements</h2>
+<p>Shifting is equivalent to popping, but working on the first element instead of the last.</p>
+
+<h3>JavaScript Array shift()</h3>
+<p>The shift() method removes the first array element and "shifts" all other elements to a lower index.</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.shift();
+</code>
+<h3>Output:</h3>
+
+<div>
+<p>The shift() method removes the first element of an array (and "shifts" the other elements to the left):</p>
+
+<p id="demo1d"></p>
+<p id="demo2d"></p>
+
+<script>
+const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1d").innerHTML = fruits4;
+fruits4.shift();
+document.getElementById("demo2d").innerHTML = fruits4;
+</script>
+</div>
+
+<p>
+The shift() method returns the value that was "shifted out":
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+let fruit = fruits.shift();
+</code>
+
+<h3>Output:</h3>
+
+<div>
+  
+<p>The shift() method returns the element that was shifted out.</p>
+
+<p id="demo1e"></p>
+<p id="demo2e"></p>
+<script>
+const fruits5 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1e").innerHTML = fruits5.shift();
+document.getElementById("demo2e").innerHTML = fruits5;
+</script>
+</div>
+
+<h2>
+JavaScript Array unshift()
+</h2>
+<p>
+The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.unshift("Lemon");
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<p>The unshift() method adds new elements to the beginning of an array:</p>
+
+<p id="demo1f"></p>
+<p id="demo2f"></p>
+<script>
+const fruits6 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1f").innerHTML = fruits6;
+fruits6.unshift("Lemon");
+document.getElementById("demo2f").innerHTML = fruits6;
+</script>
+  
+</div>
+
+<p>
+The unshift() method returns the new array length.
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.unshift("Lemon");
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>The unshift() method returns the length of the new array:</p>
+
+<p id="demo1g"></p>
+<p id="demo2g"></p>
+<script>
+const fruits7 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1g").innerHTML = fruits7.unshift("Lemon");
+document.getElementById("demo2g").innerHTML = fruits7;
+</script>
+</div>
+
+<h2>Changing Elements</h2>
+<p>Array elements are accessed using their index number:</p>
+
+<p><b>Note:</b><br>
+Array indexes start with 0: <br><br>
+
+[0] is the first array element <br>
+[1] is the second <br>
+[2] is the third ...
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits[0] = "Kiwi";
+</code>
+
+<h3>Output:</h3>
+<div>
+<p id="demo1h"></p>
+<p id="demo2h"></p>
+
+<script>
+const fruits8 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1h").innerHTML = fruits8;
+fruits8[0] = "Kiwi";
+document.getElementById("demo2h").innerHTML = fruits8;
+</script>
+</div>
+
+<h2>JavaScript Array length</h2>
+<p>The length property provides an easy way to append a new element to an array:
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits[fruits.length] = "Kiwi";
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>The length property provides an easy way to append new elements to an array without using the push() method:</p>
+
+<p id="demo1i"></p>
+<p id="demo2i"></p>
+<script>
+const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1i").innerHTML = fruits9;
+fruits9[fruits9.length] = "Kiwi";
+document.getElementById("demo2i").innerHTML = fruits9;
+</script>
+</div>
+
+<h2>
+JavaScript Array delete()
+</h2>
+<p><b>Warning !</b><br>
+
+Array elements can be deleted using the JavaScript operator delete.<br><br>
+
+Using delete leaves undefined holes in the array.<br><br>
+
+Use pop() or shift() instead.
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+delete fruits[0];
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>Deleting elements leaves undefined holes in an array:</p>
+
+<p id="demo1j"></p>
+<p id="demo2j"></p>
+
+<script>
+const fruits10 = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1j").innerHTML =
+"The first fruit is: " + fruits10[0];
+delete fruits10[0];
+document.getElementById("demo2j").innerHTML =
+"The first fruit is: " + fruits10[0];
+</script>
+</div>
+
+<h2>Merging (Concatenating) Arrays</h2>
+<p>The concat() method creates a new array by merging (concatenating) existing arrays:</p>
+
+<h3>Example (Merging Two Arrays)</h3>
+
+<code>
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+const myChildren = myGirls.concat(myBoys);
+</code>
+
+<p>The concat() method does not change the existing arrays. It always returns a new array.</p>
+
+<p>The concat() method can take any number of array arguments:</p>
+
+<h3>
+Example (Merging Three Arrays)
+</h3>
+
+<code>
+const arr1 = ["Cecilie", "Lone"];<br>
+const arr2 = ["Emil", "Tobias", "Linus"]; <br>
+const arr3 = ["Robin", "Morgan"];<br>
+const myChildren = arr1.concat(arr2, arr3);
+</code>
+
+<p>
+The concat() method can also take strings as arguments:
+</p>
+
+<h3>Example (Merging an Array with Values)</h3>
+
+<code>
+const arr1 = ["Emil", "Tobias", "Linus"];
+const myChildren = arr1.concat("Peter"); 
+</code>
+
+<h2>Splicing and Slicing Arrays</h2>
+
+<p>The splice() method adds new items to an array.<br><br>
+
+The slice() method slices out a piece of an array.</p>
+
+<h3>JavaScript Array splice()</h3>
+
+<p>
+The splice() method can be used to add new items to an array:
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.splice(2, 0, "Lemon", "Kiwi");
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<p>The splice() method adds new elements to an array:</p>
+
+<p id="demo11"></p>
+<p id="demo12"></p>
+<script>
+const fruits11 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo11").innerHTML = fruits11;
+fruits11.splice(2, 0, "Lemon", "Kiwi");
+document.getElementById("demo12").innerHTML = fruits11;
+</script>
+</div>
+
+<p>
+The first parameter <b>(2)</b> defines the position where new elements should be added (spliced in). <br><br>
+
+The second parameter <b> (0) </b> defines how many elements should be removed.<br>
+<br>
+The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.<br><br>
+
+The splice() method returns an array with the deleted items:
+</p>
+<code>
+Example<br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+fruits.splice(2, 2, "Lemon", "Kiwi");
+</code>
+
+<h3>
+  Output:
+</h3>
+<div>
+<p>The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):</p>
+
+<p id="demo21"></p>
+<p id="demo22"></p>
+<p id="demo23"></p>
+
+<script>
+const fruits12 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo21").innerHTML = "Original Array:<br> " + fruits12;
+let removed = fruits12.splice(2, 2, "Lemon", "Kiwi"); 
+document.getElementById("demo22").innerHTML = "New Array:<br>" + fruits12;
+document.getElementById("demo23").innerHTML = "Removed Items:<br> " + removed; 
+</script>
+</div>
+
+<h2>
+Using splice() to Remove Elements
+</h2>
+<p>
+With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+fruits.splice(0, 1); <br>
+// New Array: Orange,Apple,Mango
+</code>
+
+<p>The first parameter (0) defines the position where new elements should be added (spliced in).<br><br>
+
+The second parameter (1) defines how many elements should be removed.<br><br>
+
+The rest of the parameters are omitted. No new elements will be added.
+</p>
+
+<h2>JavaScript Array slice()</h2>
+
+<p>
+The slice() method slices out a piece of an array into a new array.<br>
+
+This example slices out a part of an array starting from array element 1 ("Orange"):
+
+
+</p>
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"]; <br>
+const citrus = fruits.slice(1);
+</code>
+<h3>Output:</h3>
+
+<div>
+<p>This example slices out a part of an array starting from array element 1 ("Orange"):</p>
+<p id="demo15"></p>
+
+<script>
+const fruits15 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits15.slice(1);
+document.getElementById("demo15").innerHTML = fruits15 + "<br><br>" + citrus;
+</script>
+</div>
+
+<p><b>Note:</b>:
+The slice() method creates a new array.<br>
+
+The slice() method does not remove any elements from the source array.
+</p>
+
+<p>
+This example slices out a part of an array starting from array element 3 ("Apple"):
+</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"]; <br>
+const citrus = fruits.slice(3);
+</code>
+<h3>Output:</h3>
+<div>
+<p id="demo16"></p>
+<script>
+const fruits16 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus2 = fruits16.slice(3);
+document.getElementById("demo16").innerHTML = fruits16 + "<br><br>" + citrus2;
+</script>
+</div>
+
+<p>
+The slice() method can take two arguments like slice(1, 3).
+
+The method then selects elements from the start argument, and up to (but not including) the end argument.
+</p>
+<code>
+Example
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(1, 3);
+</code>
+
+<h3>Output</h3>
+
+<div>
+<p>When the slice() method is given two arguments, it selects array elements from the start argument, and up to (but not included) the end argument:</p>
+
+<p id="demo17"></p>
+<script>
+const fruits17 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus3 = fruits17.slice(1,3);
+document.getElementById("demo17").innerHTML = fruits17 + "<br><br>" + citrus3;
+</script>
+</div>
+
+<p>If the end argument is omitted, like in the first examples, the slice() method slices out the rest of the array.</p>
+
+<code>
+Example <br>
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"]; <br>
+const citrus = fruits.slice(2);
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<p>This example slices out a part of an array starting from array element 2 ("Lemon"):</p>
+
+<p id="demo18"></p>
+<script>
+const fruits18 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus4 = fruits18.slice(2);
+document.getElementById("demo18").innerHTML = fruits18 + "<br><br>" + citrus4;
+</script>
+</div>
+
+<h2>Automatic toString()</h2>
+<p>
+JavaScript automatically converts an array to a comma separated string when a primitive value is expected.<br>
+
+This is always the case when you try to output an array.<br>
+
+These two examples will produce the same result:
+</p>
+
+<code>
+<b>Example 1 </b><br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+document.getElementById("demo").innerHTML = fruits.toString(); <br>
+// Result : Banana,Orange,Apple,Mango
+</code>
+
+<code>
+<b>Example 2 </b><br>
+const fruits = ["Banana", "Orange", "Apple", "Mango"]; <br>
+document.getElementById("demo").innerHTML = fruits; <br>
+// Result : Banana,Orange,Apple,Mango
+</code>
+
+<p><b>Note:</b><br>
+All JavaScript objects have a toString() method
+</p>
+
+<h2>Finding Max and Min Values in an Array</h2>
+
+<p>
+There are no built-in functions for finding the highest or lowest value in a JavaScript array.
+
+You will learn how you solve this problem in the next chapter of this tutorial.
+</p>
+
+<h2>Sorting Arrays</h2>
+<p>Sorting arrays are covered in the next chapter of this tutorial.
+</p>
+
+</body>
+</html>

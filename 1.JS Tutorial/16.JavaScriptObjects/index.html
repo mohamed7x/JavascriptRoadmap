@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h1>JavaScript Objects</h1>
+
+<form action="../JavaScriptEvents/index.html">
+  <input type="submit" value="Go to Google" />
+</form>
+
+<h2>
+Real Life Objects, Properties, and Methods
+</h2>
+<p>
+
+In real life, a car is an object.<br>
+
+A car has properties like weight and color, and methods like start and stop: <br>
+<img src="objectExplained.gif">
+All cars have the same properties, but the property values differ from car to car.
+<br>
+
+All cars have the same methods, but the methods are performed at different times.
+
+</p>
+<h2>JavaScript Objects</h2>
+<p>
+You have already learned that JavaScript variables are containers for data values.
+<br>
+This code assigns a simple value (Fiat) to a variable named car:
+</p>
+<code>
+let car = "Fiat";
+</code>
+<p>
+Objects are variables too. But objects can contain many values. <br>
+
+This code assigns many values (Fiat, 500, white) to a variable named car:
+</p>
+<code>
+const car = {type:"Fiat", model:"500", color:"white"};
+</code>
+<p>
+The values are written as name:value pairs (name and value separated by a colon).
+</p>
+<h3>Output: the type of car</h3>
+<div>
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// Display some data from the object:
+
+document.getElementById("demo").innerHTML = "The car type is " + car.type;
+</script>
+
+</div>
+
+<p>
+  <strong>Nots:</strong>
+It is a common practice to declare objects with the const keyword. <br>
+
+Learn more about using const with objects in the chapter: JS Const.
+</p>
+
+<h2>Object Definition</h2>
+<p>You define (and create) a JavaScript object with an object literal:</p>
+<h3>Example</h3>
+
+<code>
+const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+</code>
+<p>
+Spaces and line breaks are not important. An object definition can span multiple lines:
+</p>
+
+<h2>Object Properties</h2>
+<p>
+The name:values pairs in JavaScript objects are called properties:
+</p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Property Value</th>
+  </tr>
+  <tr>
+    <td>firstName</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>lastName</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>age</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>eyeColor</td>
+    <td>blue</td>
+  </tr>
+</table>
+
+<h2>Accessing Object Properties</h2>
+	<p>You can access object properties in two ways:</p>
+	
+	<code>
+objectName.propertyName
+	</code>
+	or
+	<code>
+objectName["propertyName"]
+	</code>
+	<p> <strong>Nots:</strong>
+JavaScript objects are containers for named values called properties.
+	</p>
+	
+	<h2>
+Object Methods
+	</h2>
+	
+	<p>
+Objects can also have methods. <br>
+
+Methods are actions that can be performed on objects. <br>
+
+Methods are stored in properties as function definitions.
+	</p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Property Value</th>
+  </tr>
+  <tr>
+    <td>firstName</td>
+    <td>John</td>
+  </tr>
+  <tr>
+    <td>lastName</td>
+    <td>Doe</td>
+  </tr>
+  <tr>
+    <td>age</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>eyeColor</td>
+    <td>blue</td>
+  </tr>
+  <tr>
+    <td>fullName</td>
+    <td>function() {return this.firstName + " " + this.lastName;}</td>
+  </tr>
+</table>
+	<p><strong>Nots:</strong>
+A method is a function stored as a property.	</p>
+
+	<h3>Example</h3>
+	<code>
+const person = { <br>
+  firstName: "John", <br>
+  lastName : "Doe", <br>
+  id       : 5566, <br>
+  fullName : function() { <br>
+    return this.firstName + " " + this.lastName; <br>
+  } <br>
+};
+	</code>
+	
+	<p>
+In the example above, <strong>this</strong>  refers to the person object. <br>
+
+I.E. <strong>this.firstName</strong> means the firstName property of <b>this</b>. <br>
+
+I.E. <b>this.firstName</b> means the firstName property of <b>person</b>.
+	</p>
+	
+	<h2>What is "this"?</h2>
+	<p>
+In JavaScript, the "this" keyword refers to an object. <br>
+
+Which object depends on how "this" is being invoked (used or called).<br>
+
+The "this" keyword refers to different objects depending on how it is used:
+	</p>
+	
+	<p>
+In an object method, <b>this</b> refers to the object. <br><br>
+Alone, <b>this</b> refers to the global object. <br><br>
+In a function, <b>this</b> refers to the global object. <br><br>
+In a function, in strict mode, <b>this</b> is undefined. <br><br>
+In an event, <b>this</b> refers to the element that received the event.<br><br>
+Methods like call(), apply(), and bind() can refer <b>this</b> to any object.
+	</p>
+	
+	<p><b>Note:</b> <b>this</b> is not a variable. It is a keyword. You cannot change the value of <b>this</b>.
+	</p>
+	
+	<h2>The "this" Keyword</h2>
+	<p>In a function definition, this refers to the "owner" of the function.<br><br>
+
+In the example above, "this" is the person object that "owns" the fullName function.
+<br><br>
+In other words, this.firstName means the firstName property of this object.
+	</p>
+	
+	<h2>Accessing Object Methods</h2>
+	<p>You access an object method with the following syntax:	</p>
+	
+	<code>objectName.methodName()</code>
+	
+	<h3>Example</h3>
+	<code>name = person.fullName();</code>
+<h3>Output:</h3>
+
+<div>
+<p>An object method is a function definition, stored as a property value.</p>
+
+<p id="demo2"></p>
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function() {
+return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo2").innerHTML = person.fullName();
+</script>
+</div>
+	
+	
+	
+<p>If you access a method without the () parentheses, it will return the function definition: </p>
+
+<h3>Example</h3>
+<code>
+Example
+name = person.fullName;
+</code>
+	<h3>Output:</h3>
+	<div>
+ <p>If you access an object method without (), it will return the function definition: </p>
+<p id="demo3"></p>
+
+<script>
+// Create an object:
+const person2 = {
+  firstName: "John",
+  lastName : "Doe",
+  id     : 5566,
+fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo3").innerHTML = person2.fullName;
+</script>
+	</div>
+	
+	<h2>
+Do Not Declare Strings, Numbers, and Booleans as Objects!
+	</h2>
+	<p>When a JavaScript variable is declared with the keyword "new", the variable is created as an object:</p>
+	
+	<code>
+x = new String();        // Declares x as a String object <br>
+y = new Number();        // Declares y as a Number object <br>
+z = new Boolean();       // Declares z as a Boolean object
+	</code>
+	
+	<p>
+	  <b>Note:</b>
+Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.
+	</p>
+	
+</body>
+</html>

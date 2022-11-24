@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript if, else, and else if</h1>
+
+<p>Conditional statements are used to perform different actions based on different conditions.</p>
+
+<h2>Conditional Statements</h2>
+
+<p>
+Very often when you write code, you want to perform different actions for different decisions.<br><br>
+
+You can use conditional statements in your code to do this.<br><br>
+
+In JavaScript we have the following conditional statements:<br><br>
+
+<ul>
+  <li>
+Use if to specify a block of code to be executed, if a specified condition is true
+  </li>
+  <li>
+Use else to specify a block of code to be executed, if the same condition is false
+  </li>
+  <li>
+Use else if to specify a new condition to test, if the first condition is false
+  </li>
+  <li>
+Use switch to specify many alternative blocks of code to be executed
+  </li>
+</ul>
+</p>
+
+<h2>The if Statement</h2>
+<p>Use the if statement to specify a block of JavaScript code to be executed if a condition is true.
+</p>
+
+<<h3>Syntax</h3>
+
+<code>
+if (condition) {
+  //  block of code to be executed if the condition is true
+}
+</code>
+
+<p><b>Note:</b>
+Note that if is in lowercase letters. Uppercase letters (If or IF) will generate a JavaScript error.
+</p>
+
+<h3>Example</h3>
+<p>
+Make a "Good day" greeting if the hour is less than 18:00:
+</p>
+
+<code>
+if (hour < 18) {
+  greeting = "Good day";
+}
+</code>
+<p>The result of greeting will be:</p>
+<p>
+Good day
+</p>
+
+<h3>Output:</h3>
+
+<div>
+<p>Display "Good day!" if the hour is less than 18:00:</p>
+
+<p id="demo">Good Evening!</p>
+<script>
+if (new Date().getHours() < 18) {
+  document.getElementById("demo").innerHTML = "Good day!";
+}
+</script>
+</div>
+
+<h2>
+The else Statement
+</h2>
+
+<p>
+Use the else statement to specify a block of code to be executed if the condition is false.
+</p>
+
+<code>
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+</code>
+}
+
+<h3>Example</h3>
+<p>
+If the hour is less than 18, create a "Good day" greeting, otherwise "Good evening":
+</p>
+
+<code>
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+</code>
+<p>
+The result of greeting will be:<br>
+</p>
+<h3>Output:</h3>
+
+<div>
+<p>A time-based greeting:</p>
+
+<p id="demo1"></p>
+
+<script>
+const hour = new Date().getHours(); 
+let greeting;
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+
+document.getElementById("demo1").innerHTML = greeting;
+</script>
+</div>
+
+<h2>The else if Statement</h2>
+<p>Use the else if statement to specify a new condition if the first condition is false.</p>
+
+<h3>Syntax</h3>
+<code>
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+</code>
+
+<h3>Example</h3>
+<p>If time is less than 10:00, create a "Good morning" greeting, if not, but time is less than 20:00, create a "Good day" greeting, otherwise a "Good evening":</p>
+
+<code>
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+</code>
+
+<div>
+<p>A time-based greeting:</p>
+
+<p id="demo2"></p>
+<script>
+const time2 = new Date().getHours();
+let greeting2;
+if (time2 < 10) {
+  greeting2 = "Good morning";
+} else if (time2 < 20) {
+  greeting2 = "Good day";
+} else {
+greeting2 = "Good evening";
+}
+document.getElementById("demo2").innerHTML = greeting2;
+</script>
+</div>
+
+<h3>More Examples</h3>
+<p>
+
+Random link
+This example will write a link to either W3Schools or to the World Wildlife Foundation (WWF). By using a random number, there is a 50% chance for each of the links.
+</p>
+
+<div>
+<h2>JavaScript Math.random()</h2>
+
+<p id="demo4"></p>
+
+<script>
+let text4;
+if (Math.random() < 0.5) {
+  text4 = "<a href='https://w3schools.com'>Visit W3Schools</a>";
+} else {
+  text4 = "<a href='https://wwf.org'>Visit WWF</a>";
+}
+document.getElementById("demo4").innerHTML = text4;
+</script>
+</div>
+
+
+</body>
+</html>

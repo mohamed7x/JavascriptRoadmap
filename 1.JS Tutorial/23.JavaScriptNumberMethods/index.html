@@ -1,0 +1,274 @@
+
+
+<h1>JavaScript Number Methods</h1>
+
+<form action="../JavaScriptArrays/index.html">
+  <input type="submit" value="Next" />
+</form>
+
+<p>
+Number methods help you work with numbers.
+</p>
+<h2>
+Number Methods and Properties
+</h2>
+<p>
+
+Primitive values (like 3.14 or 2014), cannot have properties and methods (because they are not objects).<br>
+
+But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.
+</p>
+<h2>
+The toString() Method
+</h2>
+<p>
+The toString() method returns a number as a string.<br>
+
+All number methods can be used on any type of numbers (literals, variables, or expressions):
+</p>
+<h3>
+Example
+</h3>
+<code>
+let x = 123;
+x.toString();
+(123).toString();
+(100 + 23).toString();
+</code>
+
+<div>
+<p>The toString() method converts a number to a string.</p>
+<p id="demo"></p>
+
+<script>
+let x = 123;
+document.getElementById("demo").innerHTML =
+  x.toString() + "<br>" +
+   (123).toString() + "<br>" +
+   (100 + 23).toString();
+</script>
+</div>
+
+<h2>
+The toExponential() Method
+</h2>
+<p>
+toExponential() returns a string, with a number rounded and written using exponential notation.<br>
+
+A parameter defines the number of characters behind the decimal point:
+</p>
+<h3>
+Example
+</h3>
+<code>
+let x = 9.656;
+x.toExponential(2);
+x.toExponential(4);
+x.toExponential(6);
+</code>
+<p>
+The parameter is optional. If you don't specify it, JavaScript will not round the number.
+</p>
+
+<h2>
+The toFixed() Method
+</h2>
+
+
+<p>
+toFixed() returns a string, with the number written with a specified number of decimals:
+
+</p>
+
+<h3>Example</h3>
+
+<code>
+let x = 9.656;
+x.toFixed(0);
+x.toFixed(2);
+x.toFixed(4);
+x.toFixed(6);
+</code>
+<p>
+toFixed(2) is perfect for working with money.
+</p>
+
+<h2>
+The toPrecision() Method
+</h2>
+<p>
+toPrecision() returns a string, with a number written with a specified length:
+</p>
+<h3>
+Example
+</h3>
+<code>
+let x = 9.656;
+x.toPrecision();
+x.toPrecision(2);
+x.toPrecision(4);
+x.toPrecision(6);
+</code>
+
+<h2>
+The valueOf() Method
+</h2>
+
+<p>
+valueOf() returns a number as a number.
+</p>
+<h3>
+Example
+</h3>
+
+<code>
+let x = 123;
+x.valueOf();
+(123).valueOf();
+(100 + 23).valueOf();
+</code>
+<p>
+  
+In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).<br><br>
+The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.<br><br>
+
+There is no reason to use it in your code.
+
+</p>
+<p><b>Note:</b><br>
+All JavaScript data types have a valueOf() and a toString() method.
+</p>
+
+
+
+
+<h2>
+Converting Variables to Numbers
+</h2>
+<p>
+There are 3 JavaScript methods that can be used to convert variables to numbers:<br>
+<ul>
+  <li>
+The Number() method
+  </li>
+  <li>
+The parseInt() method
+  </li>
+  <li>
+The parseFloat() method
+  </li>
+</ul>
+
+
+
+These methods are not number methods, but global JavaScript methods.
+</p>
+<h2>
+Global JavaScript Methods
+</h2>
+<p>
+
+JavaScript global methods can be used on all JavaScript data types.<br>
+
+
+These are the most relevant methods, when working with numbers:
+</p>
+
+<table>
+  <tr>
+    <th>
+Method	
+    </th>
+    <th>
+Description
+    </th>
+  </tr>
+  <tr>
+    <td>
+Number()
+    </td>
+    <td>
+Returns a number, converted from its argument.
+    </td>
+  </tr>
+ <tr>
+    <td>
+parseFloat()
+    </td>
+    <td>
+Parses its argument and returns a floating point number
+    </td>
+  </tr>
+ <tr>
+    <td>
+parseInt()
+    </td>
+    <td>
+Parses its argument and returns an integer
+    </td>
+  </tr>
+</table>
+
+<h3>
+  1-The Number() Method
+</h3>
+<p>
+Number() can be used to convert JavaScript variables to numbers:
+</p>
+<code>
+Example
+Number(true); // 1
+Number(false); // 0
+Number("10"); // 10
+Number("  10"); // 10
+Number("10  "); // 10
+Number(" 10  "); // 10
+Number("10.33"); // 10.33
+Number("10,33"); //NaN
+Number("10 33");// NaN
+Number("John"); // NaN
+</code>
+
+<p>
+If the number cannot be converted, NaN (Not a Number) is returned.
+</p>
+
+<h3>
+The Number() Method Used on Dates
+</h3>
+<p>
+Number() can also convert a date to a number.
+</p>
+
+<code>
+Example
+Number(new Date("1970-01-01"))
+</code>
+
+
+<p><b>Note:</b><br>
+The Number() method returns the number of milliseconds since 1.1.1970.
+</p>
+<p>
+The number of milliseconds between 1970-01-02 and 1970-01-01 is 86400000:
+</p>
+
+<h3>
+The parseInt() Method
+</h3>
+<p>
+parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+</p>
+<code>
+Example
+parseInt("-10");
+parseInt("-10.33");
+parseInt("10");
+parseInt("10.33");
+parseInt("10 20 30");
+parseInt("10 years");
+parseInt("years 10");
+</code>
+
+
+

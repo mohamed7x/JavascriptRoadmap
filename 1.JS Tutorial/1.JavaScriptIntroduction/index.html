@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h1>JavaScript Introduction</h1>
+
+<form action="../2.JavaScriptWhereTo/index.html">
+    <input type="submit" value="next" />
+</form>
+
+<p style="background-color:#D9EEE1;">This page contains some examples of what JavaScript can do.</p>
+
+<h2>JavaScript Can Change HTML Content</h2>
+
+<p>One of many JavaScript HTML methods is <span style="color: red;">getElementById()</span>.<br>
+
+    The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) 
+    to "Hello JavaScript":
+
+</p>
+
+<h3>Example</h3>
+<code>
+    document.getElementById("demo").innerHTML = "Hello JavaScript";
+</code>
+
+<h3>Output</h3>
+<div>
+
+    <h2>What Can JavaScript Do?</h2>
+    
+    <p id="demo">JavaScript can change HTML content.</p>
+    
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    
+    </div>
+
+
+    <p style="background-color:#FFFFCC;">JavaScript accepts both double and single quotes:</p>
+
+    <h3>Example</h3>
+    <code>document.getElementById('demo').innerHTML = 'Hello JavaScript';</code>
+
+
+<p>JavaScript can display date</p>
+
+<button type="button"
+onclick="document.getElementById('demo2').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo2">test</p>
+
+
+
+
+<h2>JavaScript can change HTML attribute values.</h2>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an img.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+
+<h2>
+JavaScript Can Change HTML Styles (CSS)
+</h2>
+<p id="demo3">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo3').style.fontSize='35px'">Click Me!</button>
+
+<h2>JavaScript Can Hide HTML Elements</h2>
+<p>Hiding HTML elements can be done by changing the <span style="color: red;">display</span> style:</p>
+
+<h3>Example</h3>
+<code>
+    document.getElementById("demo").style.display = "none";
+</code>
+<h3>Output</h3>
+<div>
+    <p id="demo4">JavaScript can hide HTML elements.</p>
+
+<button type="button" onclick="document.getElementById('demo4').style.display='none'">Click Me!</button>
+</div>
+
+<h2>JavaScript Can Show HTML Elements</h2>
+<p>Showing hidden HTML elements can also be done by changing the <span style="color: red;">display</span> style:</p>
+
+<h3>Example</h3>
+<code>
+    document.getElementById("demo").style.display = "block";
+</code>
+<h3>Output</h3>
+<div>
+    <p>JavaScript can show hidden HTML elements.</p>
+
+<p id="demo5" style="display:none">Hello JavaScript!</p>
+
+<button type="button" onclick="document.getElementById('demo5').style.display='block'">Click Me!</button>
+</div>
+
+<h3>
+    Did You Know?
+</h3>
+<p style="background-color:#FFFFCC;">
+    
+JavaScript and Java are completely different languages, both in concept and design.
+
+JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.
+
+ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.
+</p>
+
+
+</body>
+</html> 

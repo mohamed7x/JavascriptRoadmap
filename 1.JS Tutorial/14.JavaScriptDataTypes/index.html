@@ -1,0 +1,92 @@
+
+<h1>JavaScript Data Types</h1>
+
+<form action="../JavaScriptFunctions/index.html">
+  <input type="submit" value="Go to Google" />
+</form>
+
+
+<p>
+JavaScript variables can hold different data types: numbers, strings, objects and more:
+</p>
+<code>
+let length = 16;                               // Number <br>
+let lastName = "Johnson";                      // String <br>
+let x = {firstName:"John", lastName:"Doe"};    // Object
+</code>
+
+<h2>The Concept of Data Types</h2>
+<p>
+In programming, data types is an important concept. <br>
+
+To be able to operate on variables, it is important to know something about the type. <br>
+
+Without data types, a computer cannot safely solve this:
+</p>
+
+<code>
+let x = 16 + "Volvo";
+</code>
+<p>
+Does it make any sense to add "Volvo" to sixteen? Will it produce an error or will it produce a result? <br>
+
+JavaScript will treat the example above as:
+
+</p>
+<code>
+let x = "16" + "Volvo";
+</code>
+<h3>Output</h3>
+<code>
+  16Volvo
+</code>
+<p>
+  <strong>Nots:</strong>When adding a number and a string, JavaScript will treat the number as a string.
+</p>
+
+<p>
+Example
+let x = 16 + "Volvo";
+Example
+let x = "Volvo" + 16;
+
+</p>
+
+
+
+<p>
+JavaScript evaluates expressions from left to right. Different sequences can produce different results:
+
+JavaScript:
+let x = 16 + 4 + "Volvo";
+Result:
+20Volvo
+JavaScript:
+let x = "Volvo" + 16 + 4;
+Result:
+
+Volvo164
+</p>
+
+<p>
+In the first example, JavaScript treats 16 and 4 as numbers, until it reaches "Volvo". <br>
+
+In the second example, since the first operand is a string, all operands are treated as strings.
+</p>
+<h2>
+JavaScript Types are Dynamic
+</h2>
+<p>
+JavaScript has dynamic types. This means that the same variable can be used to hold different data types:
+</p>
+<h3>Example</h3>
+<code>
+let x;           // Now x is undefined <br>
+x = 5;           // Now x is a Number <br>
+x = "John";      // Now x is a String 
+</code>
+
+<h2>
+JavaScript Strings
+</h2>
+................................................................................................................................................,...............

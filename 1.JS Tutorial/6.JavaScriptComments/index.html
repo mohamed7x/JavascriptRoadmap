@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>JavaScript Comments</h1>
+
+    <form action="../7.JavaScriptVariables/index.html">
+        <input type="submit" value="Next" />
+    </form>
+
+    <p>JavaScript comments can be used to explain JavaScript code, and to make it more readable.<br><br>
+
+        JavaScript comments can also be used to prevent execution, when testing alternative code.</p>
+
+    <h2>Single Line Comments</h2>
+    <p>
+        Single line comments start with <span style="color: red;">//</span>.<br>
+
+        Any text between <span style="color: red;">//</span> and the end of the line will be ignored by JavaScript (will
+        not be executed).<br>
+
+        This example uses a single-line comment before each code line:
+    </p>
+
+<h3>Example</h3>
+<pre>
+<span style="color: green;">// Change heading:</span>
+document.getElementById("myH").innerHTML = "My First Page";
+
+<span style="color: green;">// Change paragraph:</span>
+document.getElementById("myP").innerHTML = "My first paragraph.";
+</pre>
+<h3>Output</h3>
+<div>
+    <h1 id="myH">hhhhhhh</h1>
+<p id="myP">nnnnnn</p>
+
+<script>
+// Change heading:
+document.getElementById("myH").innerHTML = "JavaScript Comments";
+// Change paragraph:
+document.getElementById("myP").innerHTML = "My first paragraph.";
+</script>
+</div>
+
+<p>This example uses a single line comment at the end of each line to explain the code:</p>
+<h3>Example</h3>
+<pre>
+    let x = 5;      
+    // Declare x, give it the value of 5
+    let y = x + 2;  
+    // Declare y, give it the value of x + 2
+</pre>
+
+<h3>Output</h3>
+<div>
+    <p id="demo"></p>
+
+    <script>
+    let x = 5;      
+    // Declare x, give it the value of 5
+    let y = x + 2;  
+    // Declare y, give it the value of x + 2 
+    
+    // Write y to demo:
+    document.getElementById("demo").innerHTML = y;
+    </script>
+    </div>
+
+    <h2>Multi-line Comments</h2>
+    <p>Multi-line comments start with <span style="color: red;">/*</span> and end with <span style="color: red;">*/</span>. <br>
+
+        Any text between <span style="color: red;">/*</span> and <span style="color: red;">*/</span> will be ignored by JavaScript. <br>
+        
+        This example uses a multi-line comment (a comment block) to explain the code:</p>
+<h3>Example</h3>
+<pre>
+    /*
+    The code below will change
+    the heading with id = "myH"
+    and the paragraph with id = "myP"
+    in my web page:
+    */
+    document.getElementById("myH").innerHTML = "My First Page";
+    document.getElementById("myP").innerHTML = "My first paragraph.";
+</pre>
+
+<p style="background-color: #FFFFCC;">It is most common to use single line comments.
+    Block comments are often used for formal documentation.</p>
+
+<h2>Using Comments to Prevent Execution</h2>
+<p>
+    Using comments to prevent execution of code is suitable for code testing. <br>
+
+    Adding // in front of a code line changes the code lines from an executable line to a comment. <br>
+    
+    This example uses // to prevent execution of one of the code lines:</p>
+
+<h3>Example</h3>
+<pre>
+//document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+</pre>
+
+<p>This example uses a comment block to prevent execution of multiple lines:</p>
+<h3>Example</h3>
+<pre>
+/*
+document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+*/
+</pre>
+
+</body>
+</html>

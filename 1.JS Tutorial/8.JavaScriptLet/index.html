@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1>JavaScript Let</h1>
+
+<form action="../9.JavaScriptConst/index.html">
+  <input type="submit" value="Next" />
+</form>
+
+<p>
+The let keyword was introduced in ES6 (2015).<br><br>
+Variables defined with let cannot be Redeclared.<br><br>
+Variables defined with let must be Declared before use.<br><br>
+Variables defined with let have Block Scope.
+</p>
+
+<h2>Cannot be Redeclared</h2>
+<p>
+Variables defined with let cannot be redeclared.<br><br>
+You cannot accidentally redeclare a variable. <br><br>
+With let you can not do this:
+</p>
+<h3>Example</h3>
+<pre>
+let x = "John Doe";
+let x = 0;
+
+// SyntaxError: 'x' has already been declared
+</pre>
+
+<h3>With var you can:</h3>
+<h3>Example</h3>
+<pre>
+var x = "John Doe";
+
+var x = 0;
+</pre>
+
+<h2>Block Scope</h2>
+<p>
+Before ES6 (2015), JavaScript had only Global Scope and Function Scope. <br>
+ES6 introduced two important new JavaScript keywords: let and const. <br>
+These two keywords provide Block Scope in JavaScript. <br>
+Variables declared inside a { } block cannot be accessed from outside the block:
+</p>
+
+<h3>Example</h3>
+
+<pre>
+{
+  let x = 2;
+} 
+// x can NOT be used here
+</pre>
+
+<p>
+Variables declared with the var keyword can NOT have block scope. <br>
+Variables declared inside a { } block can be accessed from outside the block.
+</p>
+<h3>Example</h3>
+<pre>
+{
+  var x = 2;
+} 
+// x CAN be used here
+</pre>
+
+<h2>Redeclaring Variables</h2>
+<p>
+Redeclaring a variable using the var keyword can impose problems. <br>
+Redeclaring a variable inside a block will also redeclare the variable outside the block:
+</p>
+<h3>Example</h3>
+<pre>
+var x = 10; 
+// Here x is 10
+
+{
+var x = 2; 
+// Here x is 2 
+}
+
+// Here x is 2
+</pre>
+
+<p>
+Redeclaring a variable using the let keyword can solve this problem. <br>
+
+Redeclaring a variable inside a block will not redeclare the variable outside the block:
+</p>
+<h3>Example</h3>
+<pre>
+let x = 10; 
+// Here x is 10
+
+{ 
+let x = 2; 
+// Here x is 2 
+}
+
+// Here x is 10
+</pre>
+
+<h2>Redeclaring</h2>
+
+<p>
+Redeclaring a JavaScript variable with var is allowed anywhere in a program:
+</p>
+
+<pre>
+var x = 2; 
+// Now x is 2 
+
+var x = 3; 
+// Now x is 3
+</pre>
+
+<p>
+With let, redeclaring a variable in the same block is NOT allowed:
+</p>
+
+<h3>Example</h3>
+
+<pre>
+var x = 2;   // Allowed 
+let x = 3;   // Not allowed 
+
+{
+let x = 2;   // Allowed 
+let x = 3;   // Not allowed 
+} 
+
+{ 
+let x = 2;   // Allowed 
+var x = 3;   // Not allowed
+}
+</pre>
+
+<p>Redeclaring a variable with let, in another block, IS allowed:</p>
+<h3>Example</h3>
+<pre>
+let x = 2;   // Allowed 
+
+{ 
+let x = 3;   // Allowed 
+} 
+
+{ 
+let x = 4;    // Allowed 
+} 
+</pre>
+
+<h2>Let Hoisting</h2>
+<p>
+Variables defined with var are hoisted to the top and can be initialized at any time. <br>
+Meaning: You can use the variable before it is declared:
+</p>
+
+<h3>Example</h3>
+<p>This is OK:</p>
+<pre>
+carName = "Volvo"; 
+var carName;
+</pre>
+
+<p>If you want to learn more about hoisting, study the chapter JavaScript Hoisting.<br>
+Variables defined with let are also hoisted to the top of the block, but not initialized. <br>
+Meaning: Using a let variable before it is declared will result in a ReferenceError:</p>
+
+<pre>
+carName = "Saab"; 
+let carName = "Volvo";
+</pre>
+
+<p>With <b>let</b>, you cannot use a variable before it is declared.</p>
+
+<h3>output:</h3>
+<div>
+  <p id="demo6"></p>
+  <script>
+  try {
+    carName = "Saab";
+    let carName = "Volvo";
+  }
+  catch(err) {
+  document.getElementById("demo6").innerHTML = err;
+  }
+  </script>
+  
+</div>
+
+
+</body>
+</html>

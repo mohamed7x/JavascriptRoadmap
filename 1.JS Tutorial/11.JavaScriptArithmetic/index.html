@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Arithmetic</h1>
+
+<form action="../JavaScriptAssignment/index.html">
+  <input type="submit" value="Go to Google" />
+</form>
+
+<h2>JavaScript Arithmetic Operators</h2>
+<p>
+Arithmetic operators perform arithmetic on numbers (literals or variables).
+</p>
+
+<table>
+  <tr>
+    <th>Operator</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>Addition</td>
+  </tr>
+  <tr>
+    <td> -</td>
+    <td>Subtraction</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>Multiplication</td>
+  </tr>
+  <tr>
+    <td> **</td>
+    <td>Exponentiation</td>
+  </tr>
+  <tr>
+    <td> /</td>
+    <td>Division </td>
+  </tr>
+  <tr>
+    <td>%</td>
+    <td>Modulus ( Remainder)</td>
+  </tr>
+  <tr>
+    <td>++</td>
+    <td>Increment</td>
+  </tr>
+  <tr>
+    <td> --</td>
+    <td>Decrement</td>
+  </tr>
+</table>
+
+<h2>
+Arithmetic Operations
+</h2>
+<p>
+A typical arithmetic operation operates on two numbers. <br >
+
+The two numbers can be literals:
+</p>
+<p>
+  1-two numbers 
+</p>
+<h3>Example</h3>
+<code>
+let x = 100 + 50;
+</code>
+
+<p>A typical arithmetic operation takes two numbers and produces a new number.</p>
+
+<h3>Output:</h3>
+<p id="demo"></p>
+
+<script>
+let x = 100 + 50;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+<p>2- or variables:</p>
+<h3>Example</h3>
+<code>
+let m = a + b;
+</code>
+
+<div>
+<p>A typical arithmetic operation takes two numbers (or variables) and produces a new number.</p>
+<h3>Output</h3>
+<p id="demo2"></p>
+
+<script>
+let a = 100;
+let b = 50;
+let m = a + b;
+document.getElementById("demo2").innerHTML = m;
+</script>
+</div>
+
+<p>
+3-or expressions:
+</p>
+<h3>Example</h3>
+<code>let x = (100 + 50) * a;</code>
+
+
+<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+<h3>Output:</h3>
+<p id="demo3"></p>
+<script>
+let r = 3;
+let k = (100 + 50) * r;
+document.getElementById("demo3").innerHTML = k;
+</script>
+
+<h2>
+Operators and Operands
+</h2>
+
+<p>
+The numbers (in an arithmetic operation) are called operands. <br>
+
+The operation (to be performed between the two operands) is defined by an operator.
+</p>
+<table>
+  <tr>
+    <th>Operand</th>
+    <th>Operator</th>
+    <th>Operand</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>+</td>
+    <td>50</td>
+  </tr>
+</table>
+<h2>Adding</h2>
+<p>
+The addition operator (+) adds numbers:
+</p>
+<h3>
+Example
+</h3>
+<code>
+let x = 5; <br>
+let y = 2; <br>
+let z = x + y;
+</code>
+<h2>Subtracting</h2>
+<p>The subtraction operator (-) subtracts numbers.</p>
+<h3>Example</h3>
+<code>
+let x = 5; <br>
+let y = 2; <br>
+let z = x - y;
+</code>
+<h2>Multiplying</h2>
+<p>The multiplication operator (*) multiplies numbers.</p>
+
+<h2>Dividing</h2>
+<p>The division operator (/) divides numbers.</p>
+
+<h2>Remainder</h2>
+<p>The modulus operator (%) returns the division remainder.</p>
+<h3>Example</h3>
+<code>
+let x = 5; <br>
+let y = 2; <br>
+let z = x % y;
+</code>
+
+<h3>Output</h3>
+<div>
+<h3>The % Operator</h3>
+
+<p id="demo5"></p>
+<script>
+let x5 = 5;
+let y5 = 2;
+let z5 = x5 % y5;
+document.getElementById("demo5").innerHTML = z5;
+</script>
+</div>
+
+
+
+<p>
+  <strong>Nots:</strong>In arithmetic, the division of two integers produces a quotient and a remainder. <br><br>
+
+In mathematics, the result of a modulo operation is the remainder of an arithmetic division
+</p>
+
+<h2>Incrementing</h2>
+<p>The increment operator (++) increments numbers.</p>
+<h3>Example</h3>
+<code>
+let x = 5; <br>
+x++; <br>
+let z = x;
+</code>
+<h3>Output</h3>
+<div>
+<h3>The ++ Operator</h3>
+<p id="demo4"></p>
+<script>
+let n = 5;
+n++;
+let w = n;
+document.getElementById("demo4").innerHTML = w;
+</script>
+</div>
+
+<h2>Decrementing</h2>
+<p>The decrement operator (--) decrements numbers.</p>
+<h3>Example</h3>
+<code>
+let x = 5; <br>
+x--; <br>
+let z = x;
+</code>
+<h3>Output</h3>
+<div>
+<h3>The -- Operator</h3>
+<p id="demo6"></p>
+<script>
+let x6 = 5;
+x6--;
+let z6 = x6;
+document.getElementById("demo6").innerHTML = z6;
+</script>
+</div>
+
+<h2>Exponentiation</h2>
+<p>The exponentiation operator (**) raises the first operand to the power of the second operand.</p>
+
+<h3>Example</h3>
+<code>
+let x = 5; <br>
+let z = x ** 2;    // result is 25
+</code>
+
+<p>
+  <strong>Nots:</strong> x ** y produces the same result as Math.pow(x,y):
+</p>
+<h3>
+Example
+</h3>
+<code>
+let x = 5; <br>
+let z = Math.pow(x,2);   // result is 25
+</code>
+
+<h2>Operator Precedence</h2>
+<p> Operator precedence describes the order in which operations are performed in an arithmetic expression.</p>
+
+<h3>Example</h3>
+<p>Multiplication has precedence over addition.</p>
+<code>
+let x = 100 + 50 * 3;  // result is 250
+</code>
+
+<p>
+Is the result of example above the same as 150 * 3, or is it the same as 100 + 150?
+<br><br>
+Is the addition or the multiplication done first?
+<br><br>
+As in traditional school mathematics, the multiplication is done first.<br><br>
+
+Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-). <br><br>
+
+And (as in school mathematics) the precedence can be changed by using parentheses:
+</p>
+<h3>Example</h3>
+<p>
+Multiplication has precedence over addition. <br>
+But parenthesis has precedence over multiplication.
+</p>
+<code>
+let x = (100 + 50) * 3; // result is 450
+</code>
+
+<p>
+When using parentheses, the operations inside the parentheses are computed first. <br><br>
+
+When many operations have the same precedence (like addition and subtraction), they are computed from left to right:
+</p>
+<h3>Example</h3>
+<code>
+let x = 100 + 50 - 3; //result is 150-3 = 147
+</code>
+
+<h2>
+JavaScript Operator Precedence Values
+</h2>
+<p>
+Pale red entries indicates ECMAScript 2015 (ES6) or higher.
+</p>
+<table>
+  <tr>
+    <th>Value </th>
+    <th>Operator </th>
+    <th>Description </th>
+    <th>Example </th>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>( )</td>
+    <td>Expression grouping</td>
+    <td>(3+4)</td>
+  </tr>
+  
+  
+  
+  
+  
+  
+</table>
+			
+<p>Nots:
+  <strong>
+Expressions in parentheses are fully computed before the value is used in the rest of the expression.
+  </strong>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+

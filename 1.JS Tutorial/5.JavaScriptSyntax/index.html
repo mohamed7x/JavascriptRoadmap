@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Syntax</h1>
+
+<form action="../6.JavaScriptComments/index.html">
+  <input type="submit" value="next" />
+</form>
+
+<p>
+JavaScript syntax is the set of rules, how JavaScript programs are constructed:
+</p>
+<code>
+// How to create variables: <br>
+var x;
+let y;
+<br>
+// How to use variables:<br>
+x = 5;
+y = 6;
+</code>
+
+<h2>JavaScript Values</h2>
+<p>
+The JavaScript syntax defines two types of values:
+<ul>
+  <li>Fixed values</li>
+  <li>Variable values</li>
+</ul>
+
+Fixed values are called <strong>Literals</strong>.
+<br>
+Variable values are called <strong>Variables</strong> .
+</p>
+
+<h3>1.JavaScript Literals</h3>
+<p>
+The two most important syntax rules for fixed values are:
+<br><br>
+1. Numbers are written with or without decimals
+<br>
+2. Strings are text, written within double or single quotes:
+</p>
+
+<h3>2.JavaScript Variables</h3>
+<p>
+In a programming language, variables are used to store data values.<br>
+JavaScript uses the keywords var, let and const to declare variables.<br>
+An equal sign is used to assign values to variables.<br><br>
+In this example, x is defined as a variable. Then, x is assigned (given) the value 6:
+
+<code>
+ <br>
+let x; 
+<br>
+x = 6;
+</code>
+</p>
+
+<h2>JavaScript Operators</h2>
+<p>
+- JavaScript uses arithmetic operators ( + - * / ) to compute values:
+<br>
+- JavaScript uses an assignment operator ( = ) to assign values to variables:
+</p>
+
+<h2>JavaScript Expressions</h2>
+<p>
+An expression is a combination of values, variables, and operators, which computes to a value.<br>
+The computation is called an evaluation.<br>
+For example, 5 * 10 evaluates to 50:<br>
+Expressions can also contain variable values,For example: x * 10<br>
+The values can be of various types, such as numbers and strings.<br>
+For example, "John" + " " + "Doe", evaluates to "John Doe":
+
+</p>
+
+<h2>JavaScript Keywords</h2>
+
+<p>
+JavaScript keywords are used to identify actions to be performed.
+
+The let keyword tells the browser to create variables: <br>
+The var keyword also tells the browser to create variables: <br>
+In these examples, using var or let will produce the same result.
+
+</p>
+<code>
+let x, y; <br>
+x = 5 + 6;<br>
+y = x * 10;<br>
+</code>
+
+<h2>JavaScript Comments</h2>
+<p>
+Not all JavaScript statements are "executed".
+<br>
+Code after double slashes // or between /* and */ is treated as a comment.
+<br>
+Comments are ignored, and will not be executed:<br>
+</p>
+<code>
+let x = 5;   // I will be executed
+<br>
+// x = 6;   I will NOT be executed
+</code>
+<h2>
+JavaScript Identifiers / Names
+</h2>
+<p>
+Identifiers are JavaScript names.
+<br><br>
+Identifiers are used to name variables and keywords, and functions.
+<br><br>
+The rules for legal names are the same in most programming languages.
+<br><br>
+A JavaScript name must begin with:
+</p>
+<ul>
+  <li>
+A letter (A-Z or a-z)
+  </li>
+  <li>
+A dollar sign ($)
+  </li>
+  <li>
+Or an underscore (_)
+  </li>
+</ul>
+<p>
+Subsequent characters may be letters, digits, underscores, or dollar signs.
+<br> 
+<strong>
+Note:
+</strong>
+Numbers are not allowed as the first character in names.
+<br><br>
+This way JavaScript can easily distinguish identifiers from numbers.
+</p>
+<h2>
+JavaScript is Case Sensitive
+</h2>
+<p>
+All JavaScript identifiers are case sensitive. 
+<br>
+The variables lastName and lastname, are two different variables:
+  <br><br>
+JavaScript does not interpret LET or Let as the keyword let.
+<br><br>
+Hyphens (first-name, last-name, master-card) are not allowed in JavaScript. They are reserved for subtractions.
+  
+</p>
+<p>
+Lower Camel Case:
+<br>
+JavaScript programmers tend to use camel case that starts with a lowercase letter:
+<br>
+firstName, lastName, masterCard, interCity.
+</p>
+
+</body>
+</html>

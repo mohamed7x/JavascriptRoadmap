@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Template Literals</h1>
+
+<form action="../JavaScriptNumbers/index.html">
+  <input type="submit" value="Go to Google" />
+</form>
+
+
+
+<h3> Synonyms:</h3>
+<ul>
+  <li>Template Literals </li>
+  <li>Template Strings</li>
+  <li>String Templates </li>
+  <li>Back-Tics Syntax</li>
+</ul>
+
+
+<h2>Back-Tics Syntax</h2>
+<p>Template Literals use back-ticks (``) rather than the quotes ("") to define a string:</p>
+
+<h3>Example</h3>
+
+<code>let text = `Hello World!`;</code>
+
+<h2>Quotes Inside Strings</h2>
+
+<p>With template literals, you can use both single and double quotes inside a string:
+</p>
+
+<h3>Example</h3>
+<code>
+let text = `He's often called "Johnny"`;
+</code>
+
+<h3>Multiline Strings</h3>
+
+<p>
+Template literals allows multiline strings:
+</p>
+
+h3>Example</h3>
+<code>
+let text = <br>
+`The quick <br>
+brown fox <br>
+jumps over <br>
+the lazy dog`;
+</code>
+
+<h3>Output</h3>
+<div>
+<p>Template literals allows multiline strings:</p>
+<p id="demo1"></p>
+<script>
+let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+
+document.getElementById("demo1").innerHTML = text;
+</script>
+</div>
+
+<h2>Interpolation</h2>
+
+<p>
+Template literals provide an easy way to interpolate variables and expressions into strings. <br> <br>
+The method is called string interpolation.
+The syntax is:
+</p>
+
+<code>${...}</code>
+
+<h2>Variable Substitutions</h2>
+
+<p>Template literals allow variables in strings:</p>
+
+<h3>Example</h3>
+<code>
+let firstName = "John"; <br>
+let lastName = "Doe"; <br>
+let text = `Welcome ${firstName}, ${lastName}!`;
+</code>
+
+<h3>Output:</h3>
+<p>Welcome John, Doe!</p>
+
+
+<p><b>Note: </b> <br> 
+Automatic replacing of variables with real values is called string interpolation.
+</p>
+
+
+
+<h2>Expression Substitution</h2>
+<p>Template literals allow expressions in strings:</p>
+
+h3>Example</h3>
+<code>
+let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+</code>
+
+<h3>Output</h3>
+
+<div>
+<p>Template literals allows variables and  
+Expression in strings:</p>
+<p id="demo"></p>
+<script>
+let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+document.getElementById("demo").innerHTML = total;
+</script>
+</div>
+
+
+<p><b>Note: </b><br>
+Automatic replacing of variables with real values is called string interpolation.
+</p>
+
+
+<h2>HTML Templates</h2>
+
+<h3>Example</h3>
+
+<code>
+let header = "Templates Literals";
+let tags = ["template literals", "javascript", "es6"];
+
+let html = `<h2>${header}</h2>
+<ul>`;
+for (const x of tags) {
+  html += `<li>${x}</li>`;
+}
+
+html += `</ul>`;
+</code>
+
+<h3>Output</h3>
+<div>
+<p id="demo2"></p>
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let header = "Templates Literals";
+let tags = ["template literals", "javascript", "es6"];
+
+let html = `<h2>${header}</h2><ul>`;
+
+for (const x of tags) {
+html += `<li>${x}</li>`;
+}
+
+html += `</ul>`;
+document.getElementById("demo2").innerHTML = html;
+</script>
+
+</div>
+
+
+
+
+</body>
+</htmk>
+

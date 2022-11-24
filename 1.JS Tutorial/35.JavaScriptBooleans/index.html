@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Booleans</h1>
+
+<p>
+A JavaScript Boolean represents one of two values: true or false.
+</p>
+
+<h2>Boolean Values</h2>
+<p>
+Very often, in programming, you will need a data type that can only have one of two values, like
+
+YES / NO
+ON / OFF
+TRUE / FALSE
+
+For this, JavaScript has a Boolean data type. It can only take the values true or false.
+</p>
+
+<h2>The Boolean() Function</h2>
+<p>
+You can use the Boolean() function to find out if an expression (or a variable) is true:
+</p>
+
+<code>
+Example
+Boolean(10 > 9)
+</code>
+
+Or even easier:
+
+<code>
+Example
+(10 > 9)
+10 > 9
+</code>
+
+<h2>Comparisons and Conditions</h2>
+<p>
+The chapter JS Comparisons gives a full overview of comparison operators.<br>
+
+The chapter JS Conditions gives a full overview of conditional statements.<br>
+
+Here are some examples:
+</p>
+
+<table>
+  <tr>
+    <th>Operator</th>
+    <th>Description	</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>==</td>
+    <td>equal to</td>
+    <td>if (day == "Monday")</td>
+  </tr>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>greater than</td>
+    <td>if (salary > 9000)</td>
+  </tr>
+  </tr>
+  <tr>
+    <td><</td>
+    <td>less than</td>
+    <td>if (age < 18)</td>
+  </tr>
+</table>
+
+<p>
+The Boolean value of an expression is the basis for all JavaScript comparisons and conditions.
+</p>
+<h2>Everything With a "Value" is True</h2>
+
+<code>
+Examples
+100
+3.14
+-15
+"Hello"
+"false"
+7 + 1 + 3.14
+</code>
+
+<div>
+  <p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+"100 is " + Boolean(100) + "<br>" +
+"3.14 is " + Boolean(3.14) + "<br>" +
+"-15 is " + Boolean(-15) + "<br>" +
+"Any (not empty) string is " + Boolean("Hello") + "<br>" +
+"Even the string 'false' is " + Boolean('false') + "<br>" +
+"Any expression (except zero) is " + Boolean(1 + 7 + 3.14);
+</script>
+</div>
+
+
+<h2>
+Everything Without a "Value" is False
+</h2>
+<p>
+The Boolean value of 0 (zero) is false:
+</p>
+
+<code>
+let x = 0;
+Boolean(x);
+</code>
+<div>
+<p>Display the Boolean value of 0:</p>
+
+<p id="demo1"></p>
+
+<script>
+let x = 0;
+document.getElementById("demo1").innerHTML = Boolean(x);
+</script>
+</div>
+
+<p>The Boolean value of -0 (minus zero) is false:</p>
+<code>
+let x = -0;
+Boolean(x);
+</code>
+
+<p>The Boolean value of "" (empty string) is false:</p>
+<code>
+let x = "";
+Boolean(x);
+</code>
+
+<p>The Boolean value of undefined is false:
+</p>
+<code>
+let x;
+Boolean(x);
+</code>
+
+<p>The Boolean value of null is false:</p>
+<code>
+let x = null;
+Boolean(x);
+</code>
+
+<p>
+The Boolean value of false is (you guessed it) false:
+</p>
+<code>
+let x = false;
+</code>
+
+<p>
+The Boolean value of NaN is false:
+</p>
+<code>
+let x = 10 / "Hallo";
+Boolean(x);
+</code>
+
+<h2>JavaScript Booleans as Objects</h2>
+
+<p>
+Normally JavaScript booleans are primitive values created from literals:
+</p>
+
+<code>
+let x = false;
+</code>
+
+<p>
+But booleans can also be defined as objects with the keyword new:
+</p>
+
+<code>
+let y = new Boolean(false);
+</code>
+
+<code>
+Example
+let x = false;
+let y = new Boolean(false);
+
+// typeof x returns boolean
+// typeof y returns object
+</code>
+
+<div>
+<p>Booleans and Boolean objects cannot be safely compared:</p>
+
+<p id="demo2"></p>
+<script>
+// x is a boolean
+let x2 = false;
+
+// y is an object
+let y = new Boolean(false);
+document.getElementById("demo2").innerHTML = typeof x2 + "<br>" + typeof y;
+</script>
+</div>
+
+<p><b>Note:</b>
+Do not create Boolean objects.<br>
+
+The new keyword complicates the code and slows down execution speed.<br>
+
+Boolean objects can produce unexpected results:
+</p>
+
+<p>
+When using the == operator, x and y are equal:
+</p>
+
+<code>
+let x = false;
+let y = new Boolean(false);
+</code>
+
+<p>
+When using the === operator, x and y are not equal:
+</p>
+
+<code>
+let x = false;
+let y = new Boolean(false);
+</code>
+
+<p>
+Note the difference between (x==y) and (x===y).
+</p>
+
+<p>(x == y) true or false?</p>
+
+<code>
+let x = new Boolean(false);
+let y = new Boolean(false);
+// Result: false
+</code>
+
+<p>(x === y) true or false?</p>
+
+<code>
+let x = new Boolean(false);
+let y = new Boolean(false);
+// Result: false
+</code>
+
+<p>
+Comparing two JavaScript objects always return false.
+</p>
+
+
+
+
+</body>
+</html>

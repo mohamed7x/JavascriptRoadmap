@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Array Iteration</h1>
+
+<form action="../JavaScriptArrayConst/index.html">
+  <input type="submit" value="Next" />
+</form>
+
+
+<p>
+Array iteration methods operate on every array item.
+</p>
+<h2>
+JavaScript Array forEach()
+</h2>
+<p>
+The forEach() method calls a function (a callback function) once for each array element.
+
+</p>
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";<br>
+numbers.forEach(myFunction);<br>
+function myFunction(value, index, array) {
+  txt += value + "< br>";<br>
+}
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>Calls a function once for each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25];
+
+let txt = "";
+numbers.forEach(myFunction);
+document.getElementById("demo").innerHTML = txt;
+function myFunction(value, index, array) {
+  txt += value + "<br>"; 
+}
+</script>
+</div>
+
+<p>
+Note that the function takes 3 arguments:
+
+<ul>
+  <li>The item value</li>
+  <li>The item index </li>
+  <li>The array itself</li>
+</ul>
+The example above uses only the value parameter. The example can be rewritten to:
+</p>
+
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];<br>
+let txt = ""; <br>
+numbers.forEach(myFunction);<br>
+function myFunction(value) { <br>
+  txt += value + "< br>";<br>
+}
+</code>
+
+<h2>JavaScript Array map()</h2>
+<p>
+The map() method creates a new array by performing a function on each array element.<br><br>
+
+The map() method does not execute the function for array elements without values.<br><br>
+
+The map() method does not change the original array.<br><br>
+
+This example multiplies each array value by 2:
+</p>
+
+<code>
+Example <br>
+const numbers1 = [45, 4, 9, 16, 25];<br>
+const numbers2 = numbers1.map(myFunction);
+<br>
+function myFunction(value, index, array) {
+  return value * 2;<br>
+}
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>Creates a new array by performing a function on each array element.</p>
+
+<p id="demo1"></p>
+
+<script>
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = 
+numbers1.map(myFunction);
+
+document.getElementById("demo1").innerHTML = numbers2;
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+</script>
+
+</div>
+
+<p>
+Note that the function takes 3 arguments:
+
+<ul>
+  <li>The item value</li>
+  <li>The item index </li>
+  <li>The array itself</li>
+</ul>
+
+When a callback function uses only the value parameter, the index and array parameters can be omitted:
+  
+</p>
+
+<code>
+Example <br>
+const numbers1 = [45, 4, 9, 16, 25];<br>
+const numbers2 = numbers1.map(myFunction);
+<br>
+function myFunction(value) {<br>
+  return value * 2;<br>
+} <br>
+// Result:<br>45<br>4<br>9<br>16<br>25
+</code>
+
+<h2>JavaScript Array filter()</h2>
+<p>
+The filter() method creates a new array with array elements that pass a test.<br>
+
+This example creates a new array from elements with a value larger than 18:
+
+</p>
+
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];<br>
+const over18 = numbers.filter(myFunction);
+<br>
+function myFunction(value, index, array) {
+  return value > 18; <br>
+  } <br>
+ // Result: 45,25
+</code>
+
+<p>
+Note that the function takes 3 arguments:
+
+<ul>
+  <li>The item value</li>
+  <li>The item index </li>
+  <li>The array itself</li>
+</ul>
+In the example above, the callback function does not use the index and array parameters, so they can be omitted:
+</p>
+
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];<br>
+const over18 = numbers.filter(myFunction);
+<br>
+function myFunction(value) { <br>
+  return value > 18; <br>
+} <br>
+// Result: 45,25
+</code>
+
+<h2>JavaScript Array reduce()</h2>
+<p>
+The reduce() method runs a function on each array element to produce (reduce it to) a single value.<br><br>
+
+The reduce() method works from left-to-right in the array. See also reduceRight().<br><br>
+
+<p><b> Note:</b><br>
+The reduce() method does not reduce the original array.<br></p>
+
+This example finds the sum of all numbers in an array:
+</p>
+
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];<br>
+let sum = numbers.reduce(myFunction);
+<br>
+function myFunction(total, value, index, array) { <br>
+  return total + value; <br>
+}<br>
+// Result: The sum is 99
+</code>
+
+<p>
+Note that the function takes 4 arguments:
+
+<ul>
+  <li>The total (the initial value / previously returned value)</li>
+  <li>The item value </li>
+  <li>The item index </li>
+  <li>The array itself</li>
+</ul>
+
+The example above does not use the index and array parameters. It can be rewritten to:
+</p>
+
+<code>
+Example
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduce(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+// Result: The sum is 99
+</code>
+
+<p>
+The reduce() method can accept an initial value:
+</p>
+
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];<br>
+let sum = numbers.reduce(myFunction, 100);
+<br>
+function myFunction(total, value) { <br>
+  return total + value; <br>
+}
+// Result:The sum is 199
+</code>
+
+<h2>JavaScript Array reduceRight()</h2>
+
+<p>
+The reduceRight() method runs a function on each array element to produce (reduce it to) a single value. <br><br>
+
+The reduceRight() works from right-to-left in the array. See also reduce().<br><br>
+
+<b><br>
+The reduceRight() method does not reduce the original array.
+<br></b><br>
+
+This example finds the sum of all numbers in an array:
+</p>
+
+<code>
+Example <br>
+const numbers = [45, 4, 9, 16, 25];<br>
+let sum = numbers.reduceRight(myFunction);
+<br>
+function myFunction(total, value, index, array) {<br>
+  return total + value;<br>
+}<br>
+// Result: The sum is 99
+</code>
+
+<div>
+  
+<p>This example finds the sum of all numbers in an array:</p>
+
+<p id="demo3"></p>
+
+<script>
+const numbersX = [45, 4, 9, 16, 25];
+let sum3 = 
+numbersX.reduceRight(myFunctionX);
+
+document.getElementById("demo3").innerHTML = "The sum is " + sum3;
+function myFunctionX(total, value, index, array) {
+  return total + value;
+}
+</script>
+</div>
+
+<p>
+Note that the function takes 4 arguments:
+<ul>
+  <li>The total (the initial value / previously returned value)</li>
+  <li>The item value</li>
+  <li>The item index</li>
+  <li>The array itself</li>
+</ul>
+
+The example above does not use the index and array parameters. It can be rewritten to:
+</p>
+
+<code>
+Example
+const numbers = [45, 4, 9, 16, 25];
+let sum = numbers.reduceRight(myFunction);
+
+function myFunction(total, value) {
+  return total + value;
+}
+// Result: 99
+</code>
+
+<h2>JavaScript Array every()</h2>
+
+<p>
+The every() method checks if all array values pass a test.<br><br>
+
+This example checks if all array values are larger than 18:<br>
+</p>
+<code>
+Example
+const numbers = [45, 4, 9, 16, 25];
+let allOver18 = numbers.every(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>The every() method checks if all array values pass a test.</p>
+
+<p id="demo4"></p>
+
+<script>
+const numbers4 = [45, 4, 9, 16, 25];
+let allOver18 = numbers4.every(myFunction4);
+
+document.getElementById("demo4").innerHTML = "All over 18 is : " + allOver18;
+
+function myFunction4(value, index, array) {
+  return value > 18;
+}
+</script>
+</div>
+
+<p>
+Note that the function takes 3 arguments:
+
+<ul>
+  <li>The item value</li>
+  <li>The item index</li>
+  <li>The array itself</li>
+</ul>
+
+When a callback function uses the first parameter only (value), the other parameters can be omitted:
+</p>
+
+<h2>JavaScript Array some()</h2>
+<p>
+The some() method checks if some array values pass a test. <br>
+
+This example checks if some array values are larger than 18:
+</p>
+
+<code>
+Example
+const numbers = [45, 4, 9, 16, 25];
+let someOver18 = numbers.some(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+// Result: Some over 18 is : true
+</code>
+
+<p>
+Note that the function takes 3 arguments:
+
+<ul>
+  <li>The item value</li>
+  <li>The item index</li>
+  <li>The array itself</li>
+</ul>
+</p>
+
+<h2>
+JavaScript Array indexOf()
+</h2>
+<p>
+
+The indexOf() method searches an array for an element value and returns its position.
+</p>
+<p>
+Note: The first item has position 0, the second item has position 1, and so on.
+</p>
+
+<code>
+Example
+Search an array for the item "Apple":
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.indexOf("Apple") + 1;
+// Result: Apple is found in position: 1
+</code>
+
+<h3>Syntax</h3>
+<code>array.indexOf(item, start)</code><br>
+<br>
+
+
+<p><b>item :</b>
+  Required. The item to search for.</p>
+
+<p><b>start:</b>
+  Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the end.</p>
+
+
+<p>
+Array.indexOf() returns -1 if the item is not found. <br><br>
+
+If the item is present more than once, it returns the position of the first occurrence.
+</p>
+
+<h2>JavaScript Array lastIndexOf()</h2>
+<p>
+Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+</p>
+
+<code>
+Example
+Search an array for the item "Apple":
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.lastIndexOf("Apple") + 1;
+// Result: Apple is found in position: 3
+</code>
+
+<p>
+h3>Syntax</h3>
+<code>array.lastIndexOf(item, start)</code><br><br>
+
+<p><b>item :</b>
+  Required. The item to search for.</p>
+
+<p><b>start:</b>
+  Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the beginning.</p>
+</p>
+
+<h2>JavaScript Array find()</h2>
+
+<p>
+The find() method returns the value of the first array element that passes a test function.
+
+This example finds (returns the value of) the first element that is larger than 18:
+</p>
+
+<code>
+Example
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</code>
+
+<p>
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself
+</p>
+
+<h2>
+JavaScript Array findIndex()
+</h2>
+<p>
+
+The findIndex() method returns the index of the first array element that passes a test function.
+
+This example finds the index of the first element that is larger than 18:
+
+</p>
+<code>
+Example
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.findIndex(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</code>
+
+<p>
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself
+</p>
+
+<h2>
+JavaScript Array.from()
+</h2>
+<p>
+
+The Array.from() method returns an Array object from any object with a length property or any iterable object.
+
+Example
+Create an Array from a String:
+
+Array.from("ABCDEFG");
+</p>
+
+<h2>
+JavaScript Array Keys()
+</h2>
+<p>
+
+The Array.keys() method returns an Array Iterator object with the keys of an array.
+
+
+</p>
+
+<code>
+Example
+Create an Array Iterator object, containing the keys of the array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+
+for (let x of keys) {
+  text += x + "<br>";
+}
+</code>
+
+<h2>
+Array entries()
+</h2>
+
+<code>
+Example
+Create an Array Iterator, and then iterate over the key/value pairs:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+
+for (let x of f) {
+  document.getElementById("demo").innerHTML += x;
+  }
+</code>
+
+<p>
+The entries() method returns an Array Iterator object with key/value pairs:
+
+[0, "Banana"]
+[1, "Orange"]
+[2, "Apple"]
+[3, "Mango"]
+
+The entries() method does not change the original array.
+</p>
+
+<h2>
+JavaScript Array includes()
+</h2>
+<p>
+ECMAScript 2016 introduced Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).
+</p>
+
+<code>
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits.includes("Mango"); 
+// is true
+</code>
+
+<p>
+Syntax
+
+array.includes(search-item)
+
+Array.includes() allows to check for NaN values. Unlike Array.indexOf().
+
+Array.includes() is not supported in Internet Explorer and Edge 12/13.
+</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<h1>JavaScript String Methods</h1>
+
+<form action="../JavaScriptStringSearch/index.html">
+  <input type="submit" value="Next" />
+</form>
+
+
+<p>String methods help you to work with strings.</p>
+
+<h2>String Methods and Properties</h2>
+<p>Primitive values, like "John Doe", cannot have properties or methods (because they are not objects).
+
+But with JavaScript, methods and properties are also available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties. </p>
+
+
+<h2>JavaScript String Length</h2>
+
+<p>The length property returns the length of a string</p>
+
+
+<h3>Example</h3>
+
+<code>
+let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";<br>
+let length = txt.length;
+</code>
+
+<h2>
+Extracting String Parts
+</h2>
+<p>
+There are 3 methods for extracting a part of a string:
+
+<ul>
+  <li>slice(start, end)</li>
+  <li>substring(start, end)</li>
+  <li>substr(start, length)</li>
+</ul>
+</p>
+
+<h3>JavaScript String slice()</h3>
+
+<p><b>slice()</b> extracts a part of a string and returns the extracted part in a new string.<br>
+
+The method takes 2 parameters: the start position, and the end position (end not included). <br> </p>
+
+<h3>Example</h3>
+<p>Slice out a portion of a string from position 7 to position 13 (13 not included):</p>
+
+<code>
+let str = "Apple, Banana, Kiwi"; <br>
+let part = str.slice(7, 13);
+</code>
+<p>
+The slice() method extract a part of a string and returns the extracted parts in a new string:
+</p>
+<h3>Output:</h3>
+
+<div>
+<p id="demo"></p>
+<script>
+let str = "Apple, Banana, Kiwi";
+document.getElementById("demo").innerHTML = str.slice(7,13); 
+</script>
+</div>
+
+<p><b>Note:</b>
+JavaScript counts positions from zero.<br>
+
+First position is 0.<br>
+Second position is 1.
+</p>
+
+<p>
+If a parameter is negative, the position is counted from the end of the string.<br>
+
+This example slices out a portion of a string from position -12 to position -6:
+</p>
+
+<div>
+<p id="demo2"></p>
+
+<script>
+// let str = "Apple, Banana, Kiwi";
+document.getElementById("demo2").innerHTML = str.slice(-12,-6);
+</script>
+</div>
+
+<p>If you omit the second parameter, the method will slice out the rest of the string:</p>
+
+Example
+<code>let part = str.slice(7);</code>
+<p>
+or, counting from the end:
+</p>
+Example
+<code>let part = str.slice(-12);</code>
+
+<h3>Result:</h3>
+<p>
+Banana, Kiwi
+</p>
+
+<h3>
+JavaScript String substring()
+</h3>
+<p>
+substring() is similar to slice().<br>
+
+The difference is that start and end values less than 0 are treated as 0 in substring().
+</p>
+
+<p>
+If you omit the second parameter, substring() will slice out the rest of the string.
+</p>
+
+<h3>JavaScript String substr()</h3>
+<p>
+substr() is similar to slice(). <br>
+
+The difference is that the second parameter specifies the length of the extracted part.
+</p>
+<code>
+Example <br>
+let str = "Apple, Banana, Kiwi";<br>
+let part = str.substr(7, 6);
+</code>
+
+<p><b>Result: </b>Banana</p>
+
+<p>If you omit the second parameter, substr() will slice out the rest of the string.</p>
+
+<code>
+Example <br>
+let str = "Apple, Banana, Kiwi";<br>
+let part = str.substr(7);
+</code>
+<p><b>Result: </b>Banana, Kiwi</p>
+
+<p>If the first parameter is negative, the position counts from the end of the string.
+</p>
+
+<code>
+Example <br>
+let str = "Apple, Banana, Kiwi";<br>
+let part = str.substr(-4);
+</code>
+<p><b>Result: </b>Kiwi</p>
+
+<h2>Replacing String Content</h2>
+<p>
+The replace() method replaces a specified value with another value in a string:
+<br>
+</p>
+<code>
+Example <br>
+let text = "Please visit Microsoft!";<br>
+let newText = text.replace("Microsoft", "W3Schools");
+</code>
+
+<div>
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo4">Please visit Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text4 = document.getElementById("demo4").innerHTML;
+document.getElementById("demo4").innerHTML =
+  text4.replace("Microsoft","W3Schools");
+}
+</script>
+</div>
+
+<p><b>Note: </b><br>
+The replace() method does not change the string it is called on. <br>
+
+The replace() method returns a new string.
+<br>
+
+The replace() method replaces only the first match <br>
+
+If you want to replace all matches, use a regular expression with the /g flag set. <br>See examples below.
+</p>
+
+<p>
+By default, the replace() method replaces only the first match:
+</p>
+
+<h3>
+Example
+</h3>
+<code>
+
+let text = "Please visit Microsoft and Microsoft!";
+let newText = text.replace("Microsoft", "W3Schools");
+</code>
+<h3>Output:</h3>
+
+<div>
+  
+<button onclick="myFunction5()">Try it</button>
+
+<p id="demo5">Please visit Microsoft and Microsoft!</p>
+<script>
+function myFunction5() {
+  let text5 = document.getElementById("demo5").innerHTML; 
+  document.getElementById("demo5").innerHTML =
+text5.replace(/Microsoft/g,"W3Schools");
+}
+</script>
+</div>
+
+<p>
+By default, the replace() method is case sensitive. Writing MICROSOFT (with upper-case) will not work:
+</p>
+
+<p>
+To replace case insensitive, use a regular expression with an /i flag (insensitive):
+</p>
+
+<h3>Example</h3>
+
+<code>
+let text = "Please visit Microsoft!"; <br>
+let newText = text.replace(/MICROSOFT/i, "W3Schools");
+</code>
+<p><b>Note:</b>
+Regular expressions are written without quotes.
+</p>
+
+<p>
+To replace all matches, use a regular expression with a /g flag (global match):
+</p>
+
+<p><b>Note:</b>
+You will learn a lot more about regular expressions in the chapter JavaScript Regular Expressions.
+</p>
+
+<h2>Converting to Upper and Lower Case</h2>
+<p>
+A string is converted to upper case with toUpperCase(): <br>
+
+A string is converted to lower case with toLowerCase():
+</p>
+
+<h3>JavaScript String toUpperCase()</h3>
+
+<h3>Example</h3>
+<code>
+let text1 = "Hello World!"; <br>
+let text2 = text1.toUpperCase();
+</code>
+
+<h3>JavaScript String toLowerCase()</h3>
+
+<h3>Example</h3>
+<code>
+let text1 = "Hello World!";
+// String <br>
+let text2 = text1.toLowerCase();
+// text2 is text1 converted to lower
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<p>Convert string to lower case:</p>
+
+<button onclick="myFunction6()">Try it</button>
+<p id="demo6">Hello World!</p>
+
+<script>
+function myFunction6() {
+  let text6 = document.getElementById("demo6").innerHTML;
+document.getElementById("demo6").innerHTML =
+  text6.toLowerCase();
+}
+</script>
+</div>
+
+<h2>JavaScript String concat()</h2>
+<p>concat() joins two or more strings:</p>
+
+<h3>Example</h3>
+<code>
+let text1 = "Hello"; <br>
+let text2 = "World"; <br>
+let text3 = text1.concat(" ", text2);
+</code>
+
+<h3>Output:</h3>
+
+<div>
+  
+<p>The concat() method joins two or more strings:</p>
+
+<p id="demo7"></p>
+
+<script>
+let text1 = "Hello";
+let text2 = "World!";
+let text3 = text1.concat(" ",text2);
+document.getElementById("demo7").innerHTML = text3;
+</script>
+  
+</div>
+
+<p>
+The concat() method can be used instead of the plus operator. These two lines do the same:
+</p>
+
+<h3>Example</h3>
+<code>
+text = "Hello" + " " + "World!"; <br>
+text = "Hello".concat(" ", "World!");
+</code>
+
+<p><b>Noye:</b>
+All string methods return a new string. They don't modify the original string.
+<br>
+Formally said:<br>
+
+Strings are immutable: Strings cannot be changed, only replaced.
+</p>
+
+<h2>JavaScript String trim()</h2>
+<p>
+The trim() method removes whitespace from both sides of a string:</p>
+
+<h3>Example</h3>
+<code>
+let text1 = "     Hello World!      ";<br>
+let text2 = text1.trim();
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<h2>The trim() Method</h2>
+
+<p id="demo8"></p>
+
+<script>
+let text11 = "     Hello World!     ";
+let text12 = text11.trim();
+document.getElementById("demo8").innerHTML =
+"Length text1 = " + text11.length +
+"<br>Length text2 = " + text12.length;
+</script>
+  
+</div>
+
+<h3>JavaScript String trimStart()</h3>
+
+<p>ECMAScript 2019 added the String method trimStart() to JavaScript.<br>
+
+The trimStart() method works like trim(), but removes whitespace only from the start of a string.
+</p>
+<h3>
+Example
+</h3>
+<code>
+let text1 = "     Hello World!     ";
+let text2 = text1.trimStart();
+</code>
+
+
+<h3>JavaScript String trimEnd()</h3>
+
+<p>
+ECMAScript 2019 added the String method trimEnd() to JavaScript. <br>
+
+The trimEnd() method works like trim(), but removes whitespace only from the end of a string.</p>
+
+<h3>
+Example
+</h3>
+<code>
+let text1 = "     Hello World!     ";<br>
+let text2 = text1.trimEnd();
+</code>
+
+<p><b>Note: </b>
+JavaScript String trimStart() and trimEnd()
+is supported in all browsers since January 2020:
+</p>
+
+
+<h2>JavaScript String Padding</h2>
+<p>
+ECMAScript 2017 added two String methods: padStart() and padEnd() to support padding at the beginning and at the end of a string.
+</p>
+
+<h3>JavaScript String padStart()</h3>
+
+<p>The padStart() method pads a string with another string:</p>
+
+<h3>Example</h3>
+
+<code>
+let text = "555"; <br>
+let padded = text.padStart(6,"x");
+</code>
+
+<h3>Output:</h3>
+<div>
+<p id="demo13"></p>
+
+<script>
+let text13 = "555";
+document.getElementById("demo13").innerHTML = text13.padStart(6,"x");
+</script>
+</div>
+
+<h3>Example 2</h3>
+<code>
+let text = "5";
+let padded = text.padStart(4,"0");
+</code>
+
+<h3> Output</h3>
+
+<code> 0005</code>
+
+<p><b>Note:</b>
+The padStart() method is a string method.
+<br>
+To pad a number, convert the number to a string first.<br>
+
+See the example below.
+</p>
+<h3>Example</h3>
+
+<code>
+let numb = 5; <br>
+let text = numb.toString(); <br>
+let padded = text.padStart(4,"0");
+</code>
+
+<h3>JavaScript String padEnd()</h3>
+<p>The padEnd() method pads a string with another string: <br></p>
+
+<h3>Example</h3>
+<code>
+let text = "5"; <br>
+let padded = text.padEnd(4,"x");
+</code>
+<h3>Output:</h3>
+<code>5xxx</code>
+
+<h3>Example 2</h3>
+<code>
+let text = "5"; <br>
+let padded = text.padEnd(4,"0");
+</code>
+
+<h3>Output:</h3>
+<code>5000</code>
+
+<p><b>Note:</b>
+The padEnd() method is a string method.<br>
+
+To pad a number, convert the number to a string first. <br> See the example below.
+</p>
+
+<code>
+let numb = 5; <br>
+let text = numb.toString(); <br>
+let padded = text.padEnd(4,"0");
+</code>
+
+<h2>Extracting String Characters</h2>
+<p>
+There are 3 methods for extracting string characters:<br>
+<ul>
+  <li>charAt(position)</li>
+  <li>charCodeAt(position)</li>
+  <li>Property access [ ]</li>
+</ul>
+</p>
+
+<h3>JavaScript String charAt()</h3>
+<p>The charAt() method returns the character at a specified index (position) in a string:</p>
+<code>
+Example <br>
+let text = "HELLO WORLD"; <br>
+let char = text.charAt(0);
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>The charAt() method returns the character at a given position in a string:</p>
+
+<p id="demo14"></p>
+<script>
+var text14 = "HELLO WORLD";
+document.getElementById("demo14").innerHTML = text14.charAt(0);
+</script>
+
+</div>
+
+<h3>JavaScript String charCodeAt()</h3>
+<p>
+The charCodeAt() method returns the unicode of the character at a specified index in a string: <br>
+
+The method returns a UTF-16 code (an integer between 0 and 65535).
+</p>
+
+<code>
+Example <br>
+let text = "HELLO WORLD"; <br>
+let char = text.charCodeAt(0);
+</code>
+<h3>Output:</h3>
+
+<div>
+<p>The charCodeAt() method returns the unicode of the character at a given position in a string:</p>
+
+<p id="demo15"></p>
+<script>
+let text15 = "HELLO WORLD";
+document.getElementById("demo15").innerHTML = text15.charCodeAt(1);
+</script>
+</div>
+
+<h3>Property Access</h3>
+
+<p>
+ECMAScript 5 (2009) allows property access [ ] on strings:
+</p>
+
+
+<code>
+Example <br>
+let text = "HELLO WORLD"; <br>
+let char = text[0];
+</code>
+<h3>Output:</h3>
+<div>
+<p>ECMAScript 5 allows property access on strings:</p>
+
+<p id="demo16"></p>
+
+<script>
+var strNew = "HELLO WORLD";
+document.getElementById("demo16").innerHTML = strNew[0];
+</script>
+
+</div>
+
+<p>
+  <b>Note:</b><br>
+Property access might be a little <b>
+unpredictable
+</b>:<br>
+
+<ul>
+  <li>
+It makes strings look like arrays (but they are not)
+  </li>
+  <li>
+If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+  </li>
+  <li>
+It is read only. str[0] = "A" gives no error (but does not work!)
+  </li>
+</ul>
+</p>
+<code>
+Example <br>
+let text = "HELLO WORLD"; <br>
+text[0] = "A";    <br>
+// Gives no error, but does not work
+</code>
+
+<h2>Converting a String to an Array</h2>
+<p>If you want to work with a string as an array, you can convert it to an array. </p>
+
+<h2>JavaScript String split()</h2>
+<p>A string can be converted to an array with the split() method:
+</p>
+
+<h3>Example</h3>
+<code>
+text.split(",")    // Split on commas <br>
+text.split(" ")    // Split on spaces <br>
+text.split("|")    // Split on pipe
+</code>
+
+<h3>Output:</h3>
+<div>
+<p>Display the theard array element, after a string split:</p>
+<p id="demo17"></p>
+
+<script>
+let text17 = "a,b,c,d,e,f";
+const myArray = text17.split(",");
+document.getElementById("demo17").innerHTML = myArray[2];
+</script>
+</div>
+
+<p>
+If the separator is omitted, the returned array will contain the whole string in index [0]. <br><br>
+If the separator is "", the returned array will be an array of single characters:
+</p>
+
+<h3>Example</h3>
+<code>
+text.split("")
+</code>
+
+<h3>Output:</h3>
+
+<div>
+<p>Using String.split():</p>
+
+<p id="demo18"></p>
+
+<script>
+let text18 = "Hello";
+const myArr = text18.split("");
+text18 = "";
+for (let i = 0; i < myArr.length; i++) {
+  text18 += myArr[i] + "<br>"
+}
+document.getElementById("demo18").innerHTML = text18;
+</script>
+</div>
+
+<p><b>Note:</b><br>
+Complete String Reference <br>
+For a complete String reference, go to our:
+<br>
+Complete JavaScript String Reference.<br>
+
+The reference contains descriptions and examples of all string properties and methods
+</p>
+
+</body>
+</html>
